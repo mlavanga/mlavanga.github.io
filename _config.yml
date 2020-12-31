@@ -7,12 +7,12 @@ version: 2
 
 # Personal info
 name: Mario Lavanga
-title: Postdoctoral researcher 
+title: Computational Neuroscientist, Data Scientist, Postdoctoral researcher at the theoretical neuroscience group - INS in Aix-Marseille University
 email: m.lavanga@gmail.com
 # email_title: Email (Email title override)
-phone: Your phone number (optional)
+phone: +33 6 52 93 31 80
 # phone_title: Phone (Phone title override)
-website: Your website (eg. https://google.com)(optional)
+website: https://mlavanga.github.io
 # website_title: Web (Website title override)
 
 # Dark Mode (true/false/never)
@@ -21,23 +21,15 @@ darkmode: false
 # Social links
 twitter_username: mario_lavanga
 github_username:  mlavanga
-stackoverflow_username: "00000001"
-dribbble_username: jekyll
-facebook_username: jekyll
-flickr_username: jekyll
-instagram_username: jekyll
-linkedin_username: Mario Lavanga
-xing_username: jekyll
-pinterest_username: jekyll
-youtube_username: jekyll
-googleplus_username: +jekyll
-orcid_username: 0000-0000-0000-0000
+linkedin_username: mario-lavanga-87a0a7a3
+youtube_username: PGcAPYLko6G6p-1ZfM8CvQ
+orcid_username: 0000-0002-3615-033X
 
 # Additional icon links
 additional_links:
 - title: Link name
   icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-  url: Link url (eg. https://google.com)
+  url: https://ins-amu.fr/members
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
 #   url: Link url (eg. https://google.com)
@@ -50,35 +42,75 @@ additional_links:
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
+about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
-
-  You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    - Images ![alt text](/images/landscape-trees.jpg "Trees")
+  Born in Italy and raised by a medical doctor and a housewife, since his childhood Mario has developed an early interest in human physiology and biology. 
+  Doubtful to seek a clinical career, he went on to study Biomedical engineering at Polytechnic university of Milan, where he delved into the intertwined 
+  realities of physics and biology. During his studies, he had the opportunity to build a strong background in the field of biomedical signal processing. 
+  Furthermore, he joined a top-level students program organized by the two main Italian technical universities, known as Alta Scuola Politecnica (ASP), 
+  which provided opportunity to learn a multidisciplinary approach to solving problems. The skills he acquired have been useful in his working experience, which is characterized 
+  by frequent interactions with clinical doctors. |
+  
+  Immediately after graduating, he moved to KU Leuven, Belgium, where he started focusing on mental health and neurodevelopment as part of his PhD studies, under 
+  the supervision of <a target = "_blank" href ="https://www.esat.kuleuven.be/stadius/person.php?id=17">Prof. Sabine Van Huffel</a>, <a target = "_blank" href ="https://research-hub.urosario.edu.co/display/alexander-caicedo-dorado">Prof. Alexander Caicedo Dorado</a>, 
+  <a target = "_blank" href = "https://www.uzleuven.be/en/physicians-and-specialists/gunnar-naulaers">Prof. Gunnar Naulears</a>, <a target = "_blank" href ="https://www.uzleuven.be/en/physicians-and-specialists/els-ortibus">Prof. Els Ortibus</a>. 
+  In January 2017, he received a strategic basic research grant from the <a target = "_blank" href = "https://www.fwo.be/en/news/results/phd-fellowships-and-postdoctoral-fellowships/results-sb-fellowships-call-2016/">Flemish scientific research fund (FWO)</a>. 
+  The goal of his research was to quantify stress in premature babies by means of EEG and ECG signal processing and to understand its impact on the infants’ development. |
+  
+  After its graduation, he moved to Aix-Marseille University, France, for a postdoc position. His new research focuses on the mathematical modelling 
+  of the neurodevelopment and ageing based on the Virtual Brain technology by <a target = "_blank" href = "https://ins-amu.fr/jirsaviktor"> Prof. Viktor Jirsa </a>.
+  This project is part of the European effort of the <a target = "_blank" href = "https://www.humanbrainproject.eu/en/">Human Brain Project</a>.
 
 content:
+  - title: Publications
+    layout: list
+    content: 
+      - layout: left
+        link: https://wiki.ebrains.eu/bin/view/Collabs/ageing-virtual-brain/
+        link_text: My article   
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: left
-        title: Project name
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
+      - layout: top-middle
+        title: The Virtual Ageing Brain
+        link: https://wiki.ebrains.eu/bin/view/Collabs/ageing-virtual-brain/
+        link_text: Collab-link on the EBRAINS platform (limited to EBRAINS researchers)
         additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          - title:  the-virtual-brain/tvb-root 
             icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
+            url: https://github.com/the-virtual-brain/tvb-root
+          - title:  mlavanga/ageing_virtual_brain (currently private)
             icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+            url: https://github.com/mlavanga/ageing_virtual_brain 
         quote: >
-          Short overview of the project (optional)
+          Modelling ageing and neurodevelopment with The Virtual Brain 
         description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
+          The objective of this project is to create a virtual ageing cohort based on the <a target = "_blank" href ="https://www.fz-juelich.de/inm/inm-8/EN/Forschung/Projects/1000_Brains_study/1000_Brains_node.html" >1000 brains study </a> dataset. Based on the structural information
+          of each of the study participant, the functional activity can be replicated with the whole-brain modelling approach of the <mark><a target = "_blank" href = "https://www.thevirtualbrain.org/tvb/zwei" >Virtual Brain</a></mark>. The ultimate goal
+          is to describe the functional trajectory of ageing with in-silico approaches and understand which structural processes occurring in ageing might affect 
+          the brain functions and functional networks. The modelling software has been built in <mark>Python</mark> and <mark>JupyterLab</mark>, shared and monitored with <mark>Git</mark> and executed 
+          with <mark>SnakeMake</mark> and <mark>Slurm</mark> on hyper-performance computing facilities.
+      - layout: top-middle
+        title: The Perinatal Stress Calculator
+        link: https://wiki.ebrains.eu/bin/view/Collabs/ageing-virtual-brain/
+        link_text: Collab-link on the EBRAINS platform (limited to EBRAINS researchers)
+        additional_links:
+          - title:  mlavanga
+            icon: fab fa-github
+            url: https://github.com/mlavanga
+        quote: >
+          Modelling Stress
+        description: | # this will include new lines to allow paragraphs
+          Modelling Stress
+      - layout: top-middle
+        title: Vote-chain project 
+        link: https://yezers.it/collegi-elettorali/
+        link_text: Italian webpage on the Yezers Start-up website
+        quote: >
+          Possible scenarios to introduce a blockchain system for e-voting
+        description: | # this will include new lines to allow paragraphs
+          The project aimed to introduce possible solutions for a reliable e-voting system based on <mark>blockchain</mark> techonology. This approach 
+          could especially improve the democratic engagement for long-range commuters and citizens living abroad. 
   - title: Experience
     layout: list
     content:
@@ -102,13 +134,13 @@ content:
           Short institution or course description (optional)
         description: | # this will include new lines to allow paragraphs
           Description of qualification
-  - title: A Little More About Me
+  - title: Skills
     layout: text
     content: | # this will include new lines to allow paragraphs
       This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
 
       Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
-
+      
 # Footer
 footer_show_references: true
 # references_title: References on request (Override references text)
@@ -116,6 +148,10 @@ footer_show_references: true
 # Build settings
 # theme: modern-resume-theme (Use this is you are hosting your resume yourself)
 # remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
+
+collections:
+  articles:
+    output: true
 
 sass:
   sass_dir: _sass
