@@ -8,7 +8,7 @@ version: 2
 # Personal info
 name: Mario Lavanga
 title: Computational Neuroscientist, Data Scientist, Postdoctoral researcher at the theoretical neuroscience group - INS in Aix-Marseille University
-email: m.lavanga@gmail.com
+email: m.lavanga@gmail.com, mario.LAVANGA@univ-amu.fr, mlavanga@esat.kuleuven.be
 # email_title: Email (Email title override)
 phone: +33 6 52 93 31 80
 # phone_title: Phone (Phone title override)
@@ -22,7 +22,7 @@ darkmode: false
 twitter_username: mario_lavanga
 github_username:  mlavanga
 linkedin_username: mario-lavanga-87a0a7a3
-youtube_username: PGcAPYLko6G6p-1ZfM8CvQ
+youtube_username: UCPGcAPYLko6G6p-1ZfM8CvQ
 orcid_username: 0000-0002-3615-033X
 
 # Additional icon links
@@ -92,16 +92,21 @@ content:
           with <mark>SnakeMake</mark> and <mark>Slurm</mark> on hyper-performance computing facilities.
       - layout: top-middle
         title: The Perinatal Stress Calculator
-        link: https://wiki.ebrains.eu/bin/view/Collabs/ageing-virtual-brain/
-        link_text: Collab-link on the EBRAINS platform (limited to EBRAINS researchers)
+        link: documents/LAVANGA_Mario_Thesis_Sep2020.pdf
+        link_text: PhD Thesis Manuscript
         additional_links:
           - title:  mlavanga
             icon: fab fa-github
             url: https://github.com/mlavanga
         quote: >
-          Modelling Stress
+          Modeling early-life and pain in premature infants
         description: | # this will include new lines to allow paragraphs
-          Modelling Stress
+          My PhD research focused on the detection of early-life pain and stress in premature infants by means of physiological signal processing. Patients were 
+          monitored at different age during the neonatal intensive care unit stay. A variety of clinical oriented metrics were derived to quantify stress and 
+          understand the relationship between physiological instabilities and future development outcomes. The results show that infants with a dysmature EEG in the first days of life 
+          might be associated with a greater pain experience, that could potentially lead to a lower development outcome and more internalziing behavior. The project was developed 
+          in <mark>Matlab</mark> and the code of the stress detection models along with other automatic development analysis in preemies will soon be 
+          available on <mark>GitHub</mark>.This research was supported with the strategic basich research fellowship by the FWO. 
       - layout: top-middle
         title: Vote-chain project 
         link: https://yezers.it/collegi-elettorali/
