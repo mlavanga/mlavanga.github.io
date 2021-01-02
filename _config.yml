@@ -1,5 +1,5 @@
 # Site
-repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
+repository: mlavanga/mlavanga.github.io
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Content configuration version
@@ -7,7 +7,7 @@ version: 2
 
 # Personal info
 name: Mario Lavanga
-title: Computational Neuroscientist, Data Scientist, Postdoctoral researcher at the theoretical neuroscience group - INS in Aix-Marseille University
+title: Computational Neuroscientist, Data Scientist, Postdoctoral researcher at the Theoretical Neuroscience Group - INS - Aix-Marseille University
 email: m.lavanga@gmail.com, mario.LAVANGA@univ-amu.fr, mlavanga@esat.kuleuven.be
 # email_title: Email (Email title override)
 phone: +33 6 52 93 31 80
@@ -38,7 +38,7 @@ additional_links:
 # Google Analytics and Tag Manager
 # Using more than one of these may cause issues with reporting
 # gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
+gtag: "G-9G7324QGDH"
 # google_analytics: "UA-00000000-0"
 
 # About Section
@@ -190,17 +190,17 @@ content:
           Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
           data science knowledge.
 
-  - title: Skills &amp; Proficiency
-    layout: language
-    content: 
-      - title: <mark>Matlab</mark>
-        level: Professional Knowledge 
-      - title: <mark>Python</mark>
-        level: Professional Knowledge
-      - title: Dutch
-        level: Mothertongue 
-      - title: French
-        level: Mothertongue   
+  #- title: Skills &amp; Proficiency
+    #layout: language
+    #content: 
+      #- title: <mark>Matlab</mark>
+      #  level: Professional Knowledge 
+      #- title: <mark>Python</mark>
+      #  level: Professional Knowledge
+      #- title: Dutch
+      #  level: Mothertongue 
+      #- title: French
+      #  level: Mothertongue   
 
   - title: Languages
     layout: language
@@ -218,23 +218,23 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: Python & Django
-        level: 98%
+      - name: Matlab
+        level: expert
 
-      - name: Javascript & jQuery
-        level: 98%
+      - name: Python
+        level: advanced
 
       - name: Angular
-        level: 98%
+        level: advanced
 
       - name: HTML5 & CSS
-        level: 95%
+        level: basic
 
       - name: Ruby on Rails
-        level: 85%
+        level: basic
 
       - name: Sketch & Photoshop
-        level: 60%
+        level: basic
 
 # Footer
 footer_show_references: true

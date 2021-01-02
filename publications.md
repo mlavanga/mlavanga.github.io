@@ -8,7 +8,7 @@ footer_show_references: false
 
 <main class="page-content" aria-label="Content">
   <div class="wrapper">
-    <div class="container list-container">        
+    <div class="container ">        
       <h3>Publications</h3>
       
       <ul>
