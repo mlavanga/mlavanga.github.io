@@ -13,7 +13,8 @@ email: m.lavanga@gmail.com, mario.LAVANGA@univ-amu.fr, mlavanga@esat.kuleuven.be
 phone: +33 6 52 93 31 80
 # phone_title: Phone (Phone title override)
 website: https://mlavanga.github.io
-# website_title: Web (Website title override)
+CV: https://mlavanga.github.io/documents/LAVANGA_CV.pdf
+CV_title: Mario Lavanga's resume
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -62,7 +63,7 @@ about_content: | # this will include new lines to allow paragraphs
   This project is part of the European effort of the <a target = "_blank" href = "https://www.humanbrainproject.eu/en/">Human Brain Project</a>.
 
 content:
-  - title: Publications
+  - title: Recent Publications
     layout: list
     content: 
       - layout: left
@@ -92,7 +93,7 @@ content:
           with <mark>SnakeMake</mark> and <mark>Slurm</mark> on hyper-performance computing facilities.
       - layout: top-middle
         title: The Perinatal Stress Calculator
-        link: documents/LAVANGA_Mario_Thesis_Sep2020.pdf
+        link: https://mlavanga.github.io/documents/LAVANGA_Mario_Thesis_Sep2020.pdf
         link_text: PhD Thesis Manuscript
         additional_links:
           - title:  mlavanga
@@ -106,7 +107,7 @@ content:
           understand the relationship between physiological instabilities and future development outcomes. The results show that infants with a dysmature EEG in the first days of life 
           might be associated with a greater pain experience, that could potentially lead to a lower development outcome and more internalziing behavior. The project was developed 
           in <mark>Matlab</mark> and the code of the stress detection models along with other automatic development analysis in preemies will soon be 
-          available on <mark>GitHub</mark>.This research was supported with the strategic basich research fellowship by the FWO. 
+          available on <mark>GitHub</mark>. This research was supported with the strategic basich research fellowship by the FWO. The PhD thesis manuscript can be download at this <a target = "_blank" href ="https://mlavanga.github.io/documents/LAVANGA_Mario_Thesis_Sep2020.pdf" >link </a>.
       - layout: top-middle
         title: Vote-chain project 
         link: https://yezers.it/collegi-elettorali/
@@ -119,33 +120,122 @@ content:
   - title: Experience
     layout: list
     content:
-      - layout: right
-        title: institution
-        sub_title: Job title
-        caption: Date Range (eg. November 2016 - present)
-        link: Link to company (optional)
+      - layout: middle
+        title: TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES 
+        sub_title: Postdoctoral Researcher
+        caption: October 2020 - Present
+        link: https://ins-amu.fr/members
+        link_text: INS Website
         quote: >
-          Short description of the company (optional)
+          
         description: | # this will include new lines to allow paragraphs
-          Description of role
+          
+      - layout: middle
+        title: Flemish scientific research fund (FWO) 
+        sub_title: S.B. PhD Fellow at ESAT departement, STADIUS group, KU Leuven
+        caption: October 2020 - Present
+        link: "https://www.fwo.be/en/news/results/phd-fellowships-and-postdoctoral-fellowships/results-sb-fellowships-call-2016/"
+        link_text: FWO website
+        quote: >
+          
+        description: | # this will include new lines to allow paragraphs
+          
+      - layout: middle
+        title: KU LEUVEN 
+        sub_title: PhD Fellow at ESAT departement, STADIUS group
+        caption: January 2016 - December 2016
+        link: https://www.esat.kuleuven.be/stadius/
+        link_text: STADIUS website
+        quote: >
+          
+        description: | # this will include new lines to allow paragraphs
+          
   - title: Education
     layout: list
     content:
-      - layout: top-right
+      - layout: Left
         title: KU Leuven
-        sub_title: Qualifications (eg. BA Performing Arts)
-        caption: Date Range (eg. 2016 - 2019)
+        sub_title: Doctor of Engineering Science (PhD) - Electrical Engineering
+        caption: 2016 - 2020
         quote: >
-          Short institution or course description (optional)
+          
         description: | # this will include new lines to allow paragraphs
-          Description of qualification
-  - title: Skills
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
+          data science knowledge. The PhD certificate can be download at this <a target = "_blank" href ="https://mlavanga.github.io/documents/LAVANGA_PHD_Degree.pdf" >link </a>.
+      - layout: Left
+        title: Alta Scuola Politecnica
+        sub_title: 
+        caption: 2013 - 2015
+        quote: >
+          
+        description: | # this will include new lines to allow paragraphs
+          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
+          data science knowledge.
+      - layout: Left
+        title: Politecnico di Milano
+        sub_title: MSc in Biomedical Engineering
+        caption: 2013 - 2015
+        quote: >
+          
+        description: | # this will include new lines to allow paragraphs
+          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
+          data science knowledge.
+      - layout: Left
+        title: Politecnico di Milano
+        sub_title: BA in Biomedical Engineering
+        caption: 2010 - 2013
+        quote: >
 
-      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+        description: | # this will include new lines to allow paragraphs
+          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
+          data science knowledge.
+
+  - title: Skills &amp; Proficiency
+    layout: language
+    content: 
+      - title: <mark>Matlab</mark>
+        level: Professional Knowledge 
+      - title: <mark>Python</mark>
+        level: Professional Knowledge
+      - title: Dutch
+        level: Mothertongue 
+      - title: French
+        level: Mothertongue   
+
+  - title: Languages
+    layout: language
+    content: 
+      - title: <mark>Italian</mark>
+        level: Mothertongue 
+      - title: <mark>English</mark>
+        level: Professional Knowledge
+      - title: <mark>Dutch</mark>
+        level: Basic Knowledge 
+      - title: <mark>French</mark>
+        level: Basic Knowledge 
       
+skills:
+    title: Skills &amp; Proficiency
+
+    toolset:
+      - name: Python & Django
+        level: 98%
+
+      - name: Javascript & jQuery
+        level: 98%
+
+      - name: Angular
+        level: 98%
+
+      - name: HTML5 & CSS
+        level: 95%
+
+      - name: Ruby on Rails
+        level: 85%
+
+      - name: Sketch & Photoshop
+        level: 60%
+
 # Footer
 footer_show_references: true
 # references_title: References on request (Override references text)
