@@ -12,7 +12,8 @@ footer_show_references: false
       <h3>Publications</h3>
       
       <ul>
-        {% for article in site.articles %}
+        {% assign articles = site.articles | sort: 'date' | reverse %}
+        {% for article in articles %}
           <li>
             <p>{{ article.content}}</p>
           </li>
