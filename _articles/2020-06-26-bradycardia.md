@@ -1,0 +1,6 @@
+---
+short_name: 2020-06-26-bradycardia
+date: 2020-06-26
+---
+
+<b>Lavanga M</b>, Bollen B, Jansen K, Ortibus E, Naulaers G, Van Huffel S, Caicedo A. <a  target = "_blank" href="https://www.frontiersin.org/articles/10.3389/fphys.2020.00741/full"> A Bradycardia-Based Stress Calculator for the Neonatal Intensive Care Unit: A Multisystem Approach</a>. <mark>Front Physiol.</mark> 2020 Jun 26, 11, 741.

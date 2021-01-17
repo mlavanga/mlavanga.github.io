@@ -25,6 +25,7 @@ github_username:  mlavanga
 linkedin_username: mario-lavanga-87a0a7a3
 youtube_username: UCPGcAPYLko6G6p-1ZfM8CvQ
 orcid_username: 0000-0002-3615-033X
+googlescholar_username: oM1rUeIAAAAJ&hl
 
 # Additional icon links
 additional_links:
@@ -66,23 +67,25 @@ content:
   - title: Recent Publications
     layout: list
     content: 
-      - layout: left
-        link: https://wiki.ebrains.eu/bin/view/Collabs/ageing-virtual-brain/
-        link_text: My article   
+      - layout: top-middle
+        description: <b>Lavanga M</b>, Heremans E, Moeyersons J, Bollen B, Jansen K, Ortibus E, Naulaers G, Van Huffel S, Caicedo A. <a  target = "_blank" href="https://www.frontiersin.org/articles/10.3389/fphys.2020.581250/full"> Maturation of the Autonomic Nervous System in Premature Infants :Estimating Development Based on Heart-Rate Variability Analysis</a>. <mark>Front Physiol.</mark> 2021 Jan 12.
+      - layout: top-middle
+        description: <b>Lavanga M</b>, Bollen B, Caicedo A, Dereymaeker A, Jansen K, Ortibus E, Van Huffel S, Naulaers G. <a  target = "_blank" href="https://journals.lww.com/pain/Abstract/9000/The_effect_of_early_procedural_pain_in_preterm.98213.aspx"> The effect of early procedural pain in preterm infants on the maturation of EEG and heart rate variability</a>. <mark>Pain</mark>. 2020 Oct 26. 
+      - layout: top-middle
+        description: <b>Lavanga M</b>, Smets L, Bollen B, Jansen K, Ortibus E, Huffel SV, Naulaers G, Caicedo A. <a  target = "_blank" href="https://iopscience.iop.org/article/10.1088/1361-6579/ab9b66">A perinatal stress calculator for the neonatal intensive care unit :an unobtrusive approach</a>. <mark>Physiol Meas.</mark> 2020 Aug 11;41(7):075012. 
+      - layout: top-middle
+        description: <b>Lavanga M</b>, Bollen B, Jansen K, Ortibus E, Naulaers G, Van Huffel S, Caicedo A. <a  target = "_blank" href="https://www.frontiersin.org/articles/10.3389/fphys.2020.00741/full"> A Bradycardia-Based Stress Calculator for the Neonatal Intensive Care Unit :A Multisystem Approach</a>. <mark>Front Physiol.</mark> 2020 Jun 26, 11, 741.
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
         title: The Virtual Ageing Brain
-        link: https://wiki.ebrains.eu/bin/view/Collabs/ageing-virtual-brain/
-        link_text: Collab-link on the EBRAINS platform (limited to EBRAINS researchers)
+        link: https://github.com/the-virtual-brain/tvb-root
+        link_text: Git-Hub Repository of The Virtual Brain
         additional_links:
           - title:  the-virtual-brain/tvb-root 
             icon: fab fa-github
             url: https://github.com/the-virtual-brain/tvb-root
-          - title:  mlavanga/ageing_virtual_brain (currently private)
-            icon: fab fa-github
-            url: https://github.com/mlavanga/ageing_virtual_brain 
         quote: >
           Modelling ageing and neurodevelopment with The Virtual Brain 
         description: | # this will include new lines to allow paragraphs
@@ -129,17 +132,43 @@ content:
         quote: >
           
         description: | # this will include new lines to allow paragraphs
+          I am currently working as a postdoctoral researcher at the INS focusing on functional connectivity in the contest
+          of healthy ageing. I am part of the theoretical neuroscience group and I work as part of a team dedicated to the resting state 
+          brain. I spend most of my time working on <mark>Python</mark> applications in <mark>Jupyter-lab</mark> to compute a variety of 
+          biomarkers associated to ageing and reproduce with biophysical models. My team and I are investigating functional connectivity 
+          dynamics and static functional connectivity in both the context of pathological and healthy ageing. In parallel, we are deploying
+          a variety of computational strategies to tune our models and reproduce the empirical patterns by means of supercomputer facilities.
           
+          Thanks to my doctoral studies, I can bring my perspective in the empirical data analysis, especially related to ageing. On top of that,
+          I provide specific views to enhance the comprehension of our team's results to the clinical side of the project. I enjoy learning
+          <mark>Python</mark> and <mark>Jupyter</mark> as tools for scientific computing, as well as the schedule manager such as <mark>Slurm</mark>
+          or parallel computing tools such as <mark>SnakeMake</mark>. 
+
       - layout: middle
         title: Flemish scientific research fund (FWO) 
         sub_title: S.B. PhD Fellow at ESAT departement, STADIUS group, KU Leuven
-        caption: October 2020 - Present
+        caption: January 2017 - September 2020
         link: "https://www.fwo.be/en/news/results/phd-fellowships-and-postdoctoral-fellowships/results-sb-fellowships-call-2016/"
         link_text: FWO website
         quote: >
           
         description: | # this will include new lines to allow paragraphs
-          
+          During my years as a SB PhD fellow, I developed a model to quantify stress and pain in premature infants and 
+          to understand the physiological processes behind the infants' development. The first part of my research focused on the assessment
+          of development inside the neonatal intesive care unit by means of physiological signal processing. I investigated the 
+          scalp-EEG connectivity, the nonlinear properties of the neonatal EEG signal and the fractality of the heart-rate
+          varaibility of the premature infant in the context of NICU development. The quantification of maturation trends by data processing is usually known 
+          as brain-age models. The codes associated to each of these studies were developed in <mark>Matlab</mark>.
+
+          The second part of my PhD was focused on the development of models and metrics to quantify pain and stress in premature infants. 
+          Based on the investigation of the development processes in the first of my PhD, I combined the information associated to the nonlinear
+          properties of EEG and the heart-rate variability signals as well as the interaction among EEG signals and between EEG and heart-rate
+          to detect stress or pain in premature infants. These approaches focused on the resting-state activity as well as the specific phenomenon
+          of heart-rate drops, known as bradycardias. The outputs of these analysis were combined in an investigation effort to understand
+          if the accumulation of pain in the intensive care units might lead any difference in maturation trajectories. The results showed
+          greater discontinuity in EEGs were associated to a greater accumulation of pain by preamture infants. The codes associated to each 
+          of these studies were developed in <mark>Matlab</mark>.   
+
       - layout: middle
         title: KU LEUVEN 
         sub_title: PhD Fellow at ESAT departement, STADIUS group
@@ -149,7 +178,8 @@ content:
         quote: >
           
         description: | # this will include new lines to allow paragraphs
-          
+      
+      
   - title: Education
     layout: list
     content:
@@ -169,8 +199,12 @@ content:
         quote: >
           
         description: | # this will include new lines to allow paragraphs
-          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
-          data science knowledge.
+          In parallel to my master of sciences, I joined a <a target = "_blank" href ="https://www.asp-poli.it">double-degree program</a> organized by the two major Polytechnic university 
+          of Italy. The objective was providing a set of skills that could go beyond the knowledge and the scope of a typical
+          brick-and-mortars class. Over two years, I followed a variety of extra seminars and course that go beyond our domain
+          of interests and the success of the programm was evaluated with a multidisciplinary project. The final report and output 
+          were not only evaluated on the basis of the provided technical solutions, but also the broader scope and impact for the 
+          economy and the society.  
       - layout: Left
         title: Politecnico di Milano
         sub_title: MSc in Biomedical Engineering
@@ -178,8 +212,11 @@ content:
         quote: >
           
         description: | # this will include new lines to allow paragraphs
-          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
-          data science knowledge.
+          During my master of sciences years, I developed a passion for the biomedical signal processing and biophysical models 
+          to explain physiology in mathematical terms. It was also the period that allowed me to perfection my programming skills,
+          to understand data science, machine learning and their application and to appreciate the necessary mathematical theories 
+          to combine programming with data and pattern analysis. The master of sciences diploma supplement can be downloaded at this 
+          <a target = "_blank" href ="https://mlavanga.github.io/documents/LAVANGA_MSC_DIPLOMA_SUPPLEMENT.pdf" >link </a>.
       - layout: Left
         title: Politecnico di Milano
         sub_title: BA in Biomedical Engineering
@@ -187,8 +224,10 @@ content:
         quote: >
 
         description: | # this will include new lines to allow paragraphs
-          Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
-          data science knowledge.
+          Throughout my bachelor, I learnt the basis of engineering science, spanning from chemistry, continuum mechanics to electronics
+          and economics. My last year was also the occasion to get closer to the biomedical data analysis and to get a glimpse 
+          into the research world. The bachelor diploma supplement can be downloaded at this 
+          <a target = "_blank" href ="https://mlavanga.github.io/documents/LAVANGA_BCH_DIPLOMA_SUPPLEMENT.pdf" >link </a>.
 
   #- title: Skills &amp; Proficiency
     #layout: language
@@ -224,16 +263,19 @@ skills:
       - name: Python
         level: advanced
 
-      - name: Angular
+      - name: Latex
         level: advanced
+
+      - name: Git
+        level: basic
 
       - name: HTML5 & CSS
         level: basic
 
-      - name: Ruby on Rails
+      - name: Slurm
         level: basic
 
-      - name: Sketch & Photoshop
+      - name: LabView
         level: basic
 
 # Footer
@@ -247,6 +289,7 @@ footer_show_references: true
 collections:
   articles:
     output: true
+    sort_by: date
 
 sass:
   sass_dir: _sass
