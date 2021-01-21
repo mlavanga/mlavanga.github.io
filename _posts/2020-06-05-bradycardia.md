@@ -1,7 +1,0 @@
----
-short_name: 2020-06-05-bradycardia
-name: Ted Doe
-position: Writer
----
-
-Lavanga, M., Bollen, B., Jansen, K., Ortibus, E., Naulaers, G., Van Huffel, S., & Caicedo, A. (2020). <a href="https://www.frontiersin.org/articles/10.3389/fphys.2020.00741/full"> A Bradycardia-Based Stress Calculator for the Neonatal Intensive Care Unit: A Multisystem Approach</a>. Frontiers in physiology, 11, 741. 
