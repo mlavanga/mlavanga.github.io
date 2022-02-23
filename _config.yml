@@ -67,32 +67,32 @@ content:
     layout: list
     content: 
       - layout: top-middle
+        description: <b>Lavanga M</b>, Stumme J, Yalcinkaya B H, Fousek J, Jockwitz C, Sheheitli H, Bittner N, Hashemi M, Petkoski S, Caspers S, Jirsa V, <a  target = "_blank" href="https://doi.org/10.1101/2022.02.17.480902"> The virtual aging brain :a model-driven explanation for cognitive decline in older subjects</a>. <mark>bioRxiv</mark>. Feb. 20, 2022. doi, 10.1101/2022.02.17.480902. 
+      - layout: top-middle
         description: <b>Lavanga M</b>, De Ridder J, Kotulska K, Moavero R, Curatolo P, Weschke B, et al. <a  target = "_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S174680942100255X"> Results of quantitative EEG analysis are associated with autism spectrum disorder and development abnormalities in infants with tuberous sclerosis complex</a>. <mark>Biomed. Signal Process. Control </mark>. 2021 July;68:102658.
       - layout: top-middle
         description: <b>Lavanga M</b>, Bollen B, Caicedo A, Dereymaeker A, Jansen K, Ortibus E, Van Huffel S, Naulaers G. <a  target = "_blank" href="https://journals.lww.com/pain/Fulltext/2021/05000/The_effect_of_early_procedural_pain_in_preterm.27.aspx"> The effect of early procedural pain in preterm infants on the maturation of EEG and heart rate variability</a>. <mark>PAIN</mark>. 2021 May;162(5):1556–66.
       - layout: top-middle
         description: <b>Lavanga M</b>, Heremans E, Moeyersons J, Bollen B, Jansen K, Ortibus E, Naulaers G, Van Huffel S, Caicedo A. <a  target = "_blank" href="https://www.frontiersin.org/articles/10.3389/fphys.2020.581250/full"> Maturation of the Autonomic Nervous System in Premature Infants :Estimating Development Based on Heart-Rate Variability Analysis</a>. <mark>Front Physiol.</mark> 2021 Jan 12.
-      - layout: top-middle
-        description: <b>Lavanga M</b>, Smets L, Bollen B, Jansen K, Ortibus E, Huffel SV, Naulaers G, Caicedo A. <a  target = "_blank" href="https://iopscience.iop.org/article/10.1088/1361-6579/ab9b66">A perinatal stress calculator for the neonatal intensive care unit :an unobtrusive approach</a>. <mark>Physiol Meas.</mark> 2020 Aug 11;41(7):075012. 
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
-        title: The Virtual Ageing Brain
-        link: https://github.com/the-virtual-brain/tvb-root
-        link_text: Git-Hub Repository of The Virtual Brain
+        title: The Virtual Aging Brain
+        link: https://github.com/ins-amu/virtual_aging_brain 
+        link_text: Git-Hub Repository of The Virtual Aging Brain
         additional_links:
           - title:  the-virtual-brain/tvb-root 
             icon: fab fa-github
-            url: https://github.com/the-virtual-brain/tvb-root
+            url: https://github.com/ins-amu/virtual_aging_brain 
         quote: >
-          Modelling ageing and neurodevelopment with The Virtual Brain 
+          Modelling aging and neurodevelopment with The Virtual Brain 
         description: | # this will include new lines to allow paragraphs
-          The objective of this project is to create a virtual ageing cohort based on the <a target = "_blank" href ="https://www.fz-juelich.de/inm/inm-8/EN/Forschung/Projects/1000_Brains_study/1000_Brains_node.html" >1000 brains study </a> dataset. Based on the structural information
+          The objective of this project is to create a virtual aging cohort based on the <a target = "_blank" href ="https://www.fz-juelich.de/inm/inm-8/EN/Forschung/Projects/1000_Brains_study/1000_Brains_node.html" >1000 brains study </a> dataset. Based on the structural information
           of each of the study participant, the functional activity can be replicated with the whole-brain modelling approach of the <mark><a target = "_blank" href = "https://www.thevirtualbrain.org/tvb/zwei" >Virtual Brain</a></mark>. The ultimate goal
-          is to describe the functional trajectory of ageing with in-silico approaches and understand which structural processes occurring in ageing might affect 
+          is to describe the functional trajectory of aging with in-silico approaches and understand which structural processes occurring in aging might affect 
           the brain functions and functional networks. The modelling software has been built in <mark>Python</mark> and <mark>JupyterLab</mark>, shared and monitored with <mark>Git</mark> and executed 
-          with <mark>SnakeMake</mark> and <mark>Slurm</mark> on hyper-performance computing facilities.
+          with <mark>SnakeMake</mark> and <mark>Slurm</mark> on hyper-performance computing facilities. The preprint of this study can be found at the following <a target = "_blank" href ="https://doi.org/10.1101/2022.02.17.480902" >link </a>, while the code will be available soon on this github <a target = "_blank" href ="https://github.com/ins-amu/virtual_aging_brain " >repository </a>. 
       - layout: top-middle
         title: The Perinatal Stress Calculator
         link: https://mlavanga.github.io/documents/LAVANGA_Mario_Thesis_Sep2020.pdf
