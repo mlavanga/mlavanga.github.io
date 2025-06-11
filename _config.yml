@@ -119,6 +119,14 @@ content:
         description: | # this will include new lines to allow paragraphs
           The project aimed to introduce possible solutions for a reliable e-voting system based on <mark>blockchain</mark> techonology. This approach 
           could especially improve the democratic engagement for long-range commuters and citizens living abroad. 
+  - title: Videos
+    layout: video
+    content:
+      - layout: top-middle
+        title: Modeling Demo
+        url: https://www.youtube.com/embed/dQw4w9WgXcQ
+        description: |
+          Example walkthrough of my research presented at a conference.
   - title: Experience
     layout: list
     content:

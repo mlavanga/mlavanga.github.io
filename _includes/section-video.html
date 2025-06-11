@@ -1,0 +1,16 @@
+{% for item in include.content %}
+  <div class="row clearfix layout layout-{{ item.layout | default: 'left' }}">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4>{{ item.title }}</h4>
+      {%- if item.sub_title -%}<p><b>{{ item.sub_title }}</b></p>{%- endif -%}
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+      <div class="video-container">
+        <iframe src="{{ item.url }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+      {%- if item.description -%}
+        {{ item.description | markdownify }}
+      {%- endif -%}
+    </div>
+  </div>
+{% endfor %}
