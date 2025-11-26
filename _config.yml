@@ -310,4 +310,6 @@ exclude : [
   "lib/",
   "scripts/",
   "docker-compose.yml",
+  "jekyll.log",
+  ".jekyll.pid",
   ]
