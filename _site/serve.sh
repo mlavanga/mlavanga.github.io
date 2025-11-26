@@ -1,0 +1,60 @@
+#!/bin/bash
+set -e
+
+PID_FILE=".jekyll.pid"
+LOG_FILE="jekyll.log"
+PORT=4000
+
+start_server() {
+    if [ -f "$PID_FILE" ]; then
+        if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
+            echo "⚠️  Server is already running (PID: $(cat $PID_FILE))"
+            return
+        else
+            rm "$PID_FILE"
+        fi
+    fi
+
+    echo "🚀 Starting Jekyll server..."
+    nohup bundle exec jekyll serve --livereload --host=0.0.0.0 --port=$PORT > "$LOG_FILE" 2>&1 &
+    echo $! > "$PID_FILE"
+    
+    sleep 2
+    if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
+        echo "✅ Server started on http://localhost:$PORT"
+        echo "📄 Logs: tail -f $LOG_FILE"
+    else
+        echo "❌ Server failed to start. Check $LOG_FILE"
+        cat "$LOG_FILE"
+        exit 1
+    fi
+}
+
+stop_server() {
+    if [ -f "$PID_FILE" ]; then
+        PID=$(cat "$PID_FILE")
+        echo "🛑 Stopping server (PID: $PID)..."
+        kill $PID || echo "Process not found."
+        rm "$PID_FILE"
+    else
+        echo "ℹ️  No server running."
+    fi
+}
+
+case "$1" in
+    start)   start_server ;;
+    stop)    stop_server ;;
+    restart) stop_server; sleep 1; start_server ;;
+    logs)    tail -f "$LOG_FILE" ;;
+    status)
+        if [ -f "$PID_FILE" ] && ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
+            echo "✅ Running (PID: $(cat $PID_FILE))"
+        else
+            echo "❌ Not running"
+        fi
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|logs|status}"
+        start_server # Default to start
+        ;;
+esac
