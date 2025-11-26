@@ -123,6 +123,28 @@ content:
     layout: list
     content:
       - layout: middle
+        title: HAMILTON MEDICAL AG
+        sub_title: Project Manager
+        caption: December 2024 - Present
+        link: https://www.hamilton-medical.com/
+        link_text: Hamilton Medical Website
+        quote: >
+          
+        description: |
+          Leading the development of AI-driven and signal-processing cloud solutions for ventilation management. Orchestrating the lifecycle of advanced signal processing features from ideation, simulation to IP protection and regulatory approval.
+
+      - layout: middle
+        title: HAMILTON MEDICAL AG
+        sub_title: Senior Research Engineer
+        caption: June 2022 - Present
+        link: https://www.hamilton-medical.com/
+        link_text: Hamilton Medical Website
+        quote: >
+          
+        description: |
+          Optimized real-time algorithms for the company’s flagship devices to monitor and alleviate patient-ventilator interactions. Pioneered Deep Learning and rule-based systems to estimate respiratory mechanics and patient effort. Working on patent applications.
+
+      - layout: middle
         title: TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES 
         sub_title: Postdoctoral Researcher
         caption: October 2020 - Present
@@ -193,6 +215,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           Throughout my PhD studies, I perfectioned my research and communication skills to deliver clinical sounding results based on my mathematical and
           data science knowledge. The PhD certificate can be download at this <a target = "_blank" href ="https://mlavanga.github.io/documents/LAVANGA_PHD_Degree.pdf" >link </a>.
+          <br><br><b>PhD Graduation Video:</b><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID" title="PhD Graduation Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       - layout: Left
         title: Alta Scuola Politecnica
         sub_title: 
