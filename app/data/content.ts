@@ -98,16 +98,16 @@ export const experience: ExperienceItem[] = [
     title: "Flemish scientific research fund (FWO)",
     sub_title: "S.B. PhD Fellow at ESAT departement, STADIUS group, KU Leuven",
     caption: "January 2017 - September 2020",
-    link: "https://www.fwo.be/en/news/results/phd-fellowships-and-postdoctoral-fellowships/results-sb-fellowships-call-2016/",
+    link: "https://www.fwo.be/en/support-programmes/all-calls/phd/phd-fellowship-strategic-basic-research/",
     link_text: "FWO website",
     description: "Developed a model to quantify stress and pain in premature infants. Investigated scalp-EEG connectivity, nonlinear properties of neonatal EEG, and heart-rate variability fractality. Codes developed in Matlab."
   },
   {
     title: "KU LEUVEN",
-    sub_title: "PhD Fellow at ESAT departement, STADIUS group",
+    sub_title: "PhD Fellow at ESAT departement, STADIUS group, Biomed Team",
     caption: "January 2016 - December 2016",
-    link: "https://www.esat.kuleuven.be/stadius/",
-    link_text: "STADIUS website",
+    link: "https://biomed-kuleuven.web.app/",
+    link_text: "Biomed Team Website",
     description: "First year PhD research dedicated to neonatal physiology, development, machine learning, and graph theory."
   }
 ];
@@ -129,17 +129,24 @@ export const education: ExperienceItem[] = [
     title: "Politecnico di Milano",
     sub_title: "MSc in Biomedical Engineering",
     caption: "2013 - 2015",
-    description: "Focus on biomedical signal processing and biophysical models. Master thesis on mathematical theories combining programming with data analysis."
+    description: "Focus on biomedical signal processing and biophysical models. Master thesis on the estimation of the baroreflex in an animal model."
   },
   {
     title: "Politecnico di Milano",
     sub_title: "BA in Biomedical Engineering",
     caption: "2010 - 2013",
-    description: "Basis of engineering science, chemistry, continuum mechanics, electronics, and economics."
+    description: "Basis of engineering science, continuum mechanics, electronics, and control theory."
   }
 ];
 
 export const projects: ProjectItem[] = [
+  {
+    title: "Patient-ventilator asynchronies",
+    description: "Optimizing patient-ventilator asynchronies detection in mechanically ventilated patients using advanced signal processing techniques.",
+    link: "https://www.hamilton-medical.com/en_US/Products/Technologies/IntelliSync.html",
+    tags: ["Respiratory Mechanics", "Signal Processing", "Python", "C#"],
+    quote: "Optimizing patient-ventilator asynchronies detection"
+  },
   {
     title: "The Virtual Aging Brain",
     description: "Modelling aging and neurodevelopment with The Virtual Brain. Creating a virtual aging cohort based on the 1000 brains study dataset using Python, JupyterLab, Git, SnakeMake, and Slurm.",
@@ -169,7 +176,7 @@ export const publications: ProjectItem[] = [
     description: "The virtual aging brain: Causal inference supports interhemispheric dedifferentiation in healthy aging. NeuroImage, 2023",
     link: "https://www.sciencedirect.com/science/article/pii/S1053811923005542?via%3Dihub",
     tags: ["Publication", "Aging", "Brain"],
-    date: "Feb 2022"
+    date: "Dec 2023"
   },
   {
     title: "Quantitative EEG analysis in TSC",
@@ -197,23 +204,21 @@ export const publications: ProjectItem[] = [
 export const skills: SkillItem[] = [
   { name: "Python", level: "Advanced" },
   { name: "Matlab", level: "Expert" },
-  { name: "C#", level: "Advanced" },
-  { name: "Bash", level: "Advanced" },
-  { name: "Powershell", level: "Advanced" },
-  { name: "HTML", level: "Advanced" },
-  { name: "JavaScript", level: "Advanced" },
-  { name: "React", level: "Advanced" },
-  { name: "Azure", level: "Advanced" },
-  { name: "Azure AI Foundry", level: "Advanced" },
-  { name: "Azure DevOps", level: "Advanced" },
-  { name: "Tensorflow", level: "Advanced" },
-  { name: "ASP.NET", level: "Advanced" },
+  { name: "C#", level: "Intermediate" },
+  { name: "Bash", level: "Intermediate" },
+  { name: "Powershell", level: "Intermediate" },
+  { name: "React", level: "Intermediate" },
+  { name: "Azure", level: "Intermediate" },
+  { name: "Azure AI Foundry", level: "Intermediate" },
+  { name: "Azure DevOps", level: "Intermediate" },
+  { name: "Tensorflow", level: "Intermediate" },
+  { name: "ASP.NET", level: "Intermediate" },
   { name: "Git", level: "Advanced" },
-  { name: "Agile", level: "Expert" },
+  { name: "Agile", level: "Intermediate" },
   { name: "Scrum", level: "Expert" },
-  { name: "Claude Code", level: "Advanced" },
-  { name: "Gemini CLI", level: "Advanced" },
-  { name: "Qwen Code", level: "Advanced" }
+  { name: "Claude Code", level: "Intermediate" },
+  { name: "Gemini CLI", level: "Intermediate" },
+  { name: "Qwen Code", level: "Intermediate" }
 ];
 
 export const media: MediaItem[] = [
