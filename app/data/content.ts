@@ -213,7 +213,12 @@ export const media: MediaItem[] = [
     {
         title: "PhD Graduation Video",
         description: "Video recording of the PhD graduation ceremony.",
-        video_id: "PLACEHOLDER_VIDEO_ID" // Replace with actual ID if available, or use channel logic
+        video_id: "qyrnEi6g_2E" 
+    },
+    {
+        title: "Talk at University of Virginia",
+        description: "Invited talk at the University of Virginia.",
+        video_id: "g5aOjIj49X4"
     },
     {
         title: "YouTube Channel",
