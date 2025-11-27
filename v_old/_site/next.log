@@ -1,0 +1,22 @@
+
+> v2@0.1.0 dev
+> next dev -p 3000
+
+   ▲ Next.js 16.0.4 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.1.177:3000
+
+ ✓ Starting...
+ ✓ Ready in 641ms
+ GET / 200 in 2.2s (compile: 1885ms, render: 339ms)
+ GET / 200 in 188ms (compile: 5ms, render: 183ms)
+Error: Turbopack build failed with 1 errors:
+./
+Error: Next.js inferred your workspace root, but it may not be correct.
+    We couldn't find the Next.js package (next/package.json) from the project directory: /home/mea/Documents/mlavanga.github.io/v2
+     To fix this, set turbopack.root in your Next.js config, or ensure the Next.js package is resolvable from this directory.
+    Note: For security and performance reasons, files outside of the project directory will not be compiled.
+    See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+
+    at ignore-listed frames
+[?25h

@@ -4,6 +4,7 @@ set -e
 PID_FILE=".next.pid"
 LOG_FILE="next.log"
 PORT=3000
+DIR="v2"
 
 start_server() {
     if [ -f "$PID_FILE" ]; then
@@ -16,8 +17,10 @@ start_server() {
     fi
 
     echo "🚀 Starting Next.js server..."
-    nohup npm run dev -- -p $PORT > "$LOG_FILE" 2>&1 &
-    echo $! > "$PID_FILE"
+    cd $DIR
+    nohup npm run dev -- -p $PORT > "../$LOG_FILE" 2>&1 &
+    echo $! > "../$PID_FILE"
+    cd ..
     
     sleep 5
     if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
