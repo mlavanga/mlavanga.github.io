@@ -3,8 +3,10 @@ import Hero from './components/Hero';
 import Section from './components/Section';
 import ExperienceCard from './components/ExperienceCard';
 import ProjectCard from './components/ProjectCard';
+import Skills from './components/Skills';
+import Media from './components/Media';
 import Footer from './components/Footer';
-import { personalInfo, experience, education, projects, publications } from './data/content';
+import { personalInfo, experience, education, projects, publications, skills, media } from './data/content';
 
 export default function Home() {
   return (
@@ -43,6 +45,16 @@ export default function Home() {
             <ProjectCard key={index} item={item} />
           ))}
         </div>
+      </Section>
+
+      <Section id="skills" title="Skills & Proficiency" className="bg-slate-50 dark:bg-slate-800/30">
+        <div className="max-w-4xl mx-auto">
+          <Skills items={skills} />
+        </div>
+      </Section>
+
+      <Section id="media" title="Media" className="bg-white dark:bg-slate-900">
+         <Media items={media} />
       </Section>
 
       <Section id="contact" title="Get in Touch" className="bg-blue-600 text-white">

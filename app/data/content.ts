@@ -22,6 +22,13 @@ export interface SkillItem {
   level: string;
 }
 
+export interface MediaItem {
+  title: string;
+  video_id?: string;
+  channel_id?: string;
+  description: string;
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
@@ -32,7 +39,6 @@ export interface PersonalInfo {
   socials: {
     github: string;
     linkedin: string;
-    twitter: string;
     scholar: string;
     orcid: string;
     youtube: string;
@@ -43,14 +49,13 @@ export interface PersonalInfo {
 export const personalInfo: PersonalInfo = {
   name: "Mario Lavanga",
   title: "Computational Neuroscientist, Data Scientist, Postdoctoral researcher at the Theoretical Neuroscience Group - INS - Aix-Marseille University",
-  email: ["m.lavanga@gmail.com", "mario.LAVANGA@univ-amu.fr", "mlavanga@esat.kuleuven.be"],
+  email: ["m.lavanga@gmail.com", "mlavanga@esat.kuleuven.be"],
   phone: "+33 6 52 93 31 80",
   website: "https://mlavanga.github.io",
-  cv: "https://mlavanga.github.io/documents/LAVANGA_CV.pdf",
+  cv: "/documents/LAVANGA_CV.pdf",
   socials: {
     github: "mlavanga",
     linkedin: "mario-lavanga-87a0a7a3",
-    twitter: "mario_lavanga",
     scholar: "oM1rUeIAAAAJ&hl",
     orcid: "0000-0002-3615-033X",
     youtube: "UCPGcAPYLko6G6p-1ZfM8CvQ",
@@ -202,4 +207,17 @@ export const skills: SkillItem[] = [
   { name: "HTML5 & CSS", level: "Basic" },
   { name: "Slurm", level: "Basic" },
   { name: "LabView", level: "Basic" }
+];
+
+export const media: MediaItem[] = [
+    {
+        title: "PhD Graduation Video",
+        description: "Video recording of the PhD graduation ceremony.",
+        video_id: "PLACEHOLDER_VIDEO_ID" // Replace with actual ID if available, or use channel logic
+    },
+    {
+        title: "YouTube Channel",
+        description: "Check out my YouTube channel for more videos.",
+        channel_id: "UCPGcAPYLko6G6p-1ZfM8CvQ"
+    }
 ];

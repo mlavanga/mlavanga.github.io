@@ -13,6 +13,8 @@ export default function Navbar() {
           <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#publications">Publications</NavLink>
+          <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#media">Media</NavLink>
           <NavLink href="#contact">Contact</NavLink>
         </div>
         

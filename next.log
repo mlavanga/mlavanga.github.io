@@ -7,16 +7,5 @@
    - Network:       http://192.168.1.177:3000
 
  ✓ Starting...
- ✓ Ready in 651ms
- GET / 200 in 2.2s (compile: 1918ms, render: 331ms)
- GET / 200 in 249ms (compile: 4ms, render: 245ms)
- ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
-   ▲ Next.js 16.0.4 (Turbopack)
-   - Local:         http://localhost:3000
-   - Network:       http://192.168.1.177:3000
-
- ✓ Starting...
- ✓ Ready in 679ms
- GET / 200 in 2.6s (compile: 1991ms, render: 620ms)
- GET / 200 in 287ms (compile: 10ms, render: 277ms)
- ✓ Compiled in 70ms
+ ✓ Ready in 721ms
+ GET / 200 in 2.7s (compile: 2.2s, render: 473ms)
