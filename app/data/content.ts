@@ -48,7 +48,7 @@ export interface PersonalInfo {
 
 export const personalInfo: PersonalInfo = {
   name: "Mario Lavanga",
-  title: "Senior research engineer | AI & Biosignal Processing Scientist",
+  title: "Senior research engineer | Biomedical Signal Processing & AI Scientist",
   email: ["m.lavanga@gmail.com", "mlavanga@esat.kuleuven.be"],
   phone: "+33 6 52 93 31 80",
   website: "https://mlavanga.github.io",

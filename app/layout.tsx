@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mario Lavanga | Computational Neuroscientist",
-  description: "Portfolio of Mario Lavanga - AI, Neuroscience, and Signal Processing",
+  title: "Mario Lavanga | Senior research engineer ",
+  description: "Portfolio of Mario Lavanga - Biomedical signal processing and AI research engineer",
 };
 
 export default function RootLayout({
