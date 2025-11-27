@@ -12,7 +12,7 @@ export default function Hero({ info }: { info: PersonalInfo }) {
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-sm font-medium mb-4">
-            Senior Research <Engineer></Engineer> & Project Manager
+            Senior Research Engineer & Project Manager
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Hi, I'm <span className="text-blue-600 dark:text-blue-400">{info.name}</span>
