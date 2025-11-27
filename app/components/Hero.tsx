@@ -21,7 +21,7 @@ export default function Hero({ info }: { info: PersonalInfo }) {
             {info.title}
           </p>
           <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
-            Deciphering the brain's complexity through code and data. Specializing in multimodal sensor fusion, brain modeling, and real-time patient monitoring.
+            Passionate about decoding the human body through Signal Processing and AI. Specializing in multimodal sensor fusion and real-time patient monitoring.
           </p>
           
           <div className="flex flex-wrap gap-4 pt-4">

@@ -60,7 +60,7 @@ export default function Home() {
       <Section id="contact" title="Get in Touch" className="bg-blue-600 text-white">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-xl mb-8 opacity-90">
-            I'm always open to discussing new research opportunities, collaborations, or just chatting about neuroscience and AI.
+            I'm always open to discussing new research opportunities, collaborations, or just chatting about AI coding tools.
           </p>
           <a href={`mailto:${personalInfo.email[0]}`} className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-blue-50 transition-transform hover:scale-105">
             Say Hello

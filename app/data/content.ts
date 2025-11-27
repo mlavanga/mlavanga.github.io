@@ -184,7 +184,7 @@ export const publications: ProjectItem[] = [
     date: "July 2021"
   },
   {
-    title: "Early procedural pain in preterm infants",
+    title: "Stress detection in preterm infants",
     description: "The effect of early procedural pain on the maturation of EEG and heart rate variability. PAIN, 2021.",
     link: "https://journals.lww.com/pain/Fulltext/2021/05000/The_effect_of_early_procedural_pain_in_preterm.27.aspx",
     tags: ["Publication", "Pain", "Preterm"],
@@ -231,10 +231,5 @@ export const media: MediaItem[] = [
         title: "Talk at University of Virginia",
         description: "Invited talk at the University of Virginia.",
         video_id: "g5aOjIj49X4"
-    },
-    {
-        title: "YouTube Channel",
-        description: "Check out my YouTube channel for more videos.",
-        channel_id: "UCPGcAPYLko6G6p-1ZfM8CvQ"
     }
 ];
