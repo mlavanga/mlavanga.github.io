@@ -171,8 +171,8 @@ export const projects: ProjectItem[] = [
 export const publications: ProjectItem[] = [
   {
     title: "The virtual aging brain",
-    description: "A model-driven explanation for cognitive decline in older subjects. bioRxiv, 2022.",
-    link: "https://doi.org/10.1101/2022.02.17.480902",
+    description: "The virtual aging brain: Causal inference supports interhemispheric dedifferentiation in healthy aging. NeuroImage, 2023",
+    link: "https://www.sciencedirect.com/science/article/pii/S1053811923005542?via%3Dihub",
     tags: ["Publication", "Aging", "Brain"],
     date: "Feb 2022"
   },
