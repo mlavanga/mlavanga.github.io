@@ -48,7 +48,7 @@ export interface PersonalInfo {
 
 export const personalInfo: PersonalInfo = {
   name: "Mario Lavanga",
-  title: "Computational Neuroscientist, Data Scientist, Postdoctoral researcher at the Theoretical Neuroscience Group - INS - Aix-Marseille University",
+  title: "Senior research engineer | AI & Biosignal Processing Scientist",
   email: ["m.lavanga@gmail.com", "mlavanga@esat.kuleuven.be"],
   phone: "+33 6 52 93 31 80",
   website: "https://mlavanga.github.io",
@@ -200,13 +200,25 @@ export const publications: ProjectItem[] = [
 ];
 
 export const skills: SkillItem[] = [
-  { name: "Matlab", level: "Expert" },
   { name: "Python", level: "Advanced" },
-  { name: "Latex", level: "Advanced" },
-  { name: "Git", level: "Basic" },
-  { name: "HTML5 & CSS", level: "Basic" },
-  { name: "Slurm", level: "Basic" },
-  { name: "LabView", level: "Basic" }
+  { name: "Matlab", level: "Expert" },
+  { name: "C#", level: "Advanced" },
+  { name: "Bash", level: "Advanced" },
+  { name: "Powershell", level: "Advanced" },
+  { name: "HTML", level: "Advanced" },
+  { name: "JavaScript", level: "Advanced" },
+  { name: "React", level: "Advanced" },
+  { name: "Azure", level: "Advanced" },
+  { name: "Azure AI Foundry", level: "Advanced" },
+  { name: "Azure DevOps", level: "Advanced" },
+  { name: "Tensorflow", level: "Advanced" },
+  { name: "ASP.NET", level: "Advanced" },
+  { name: "Git", level: "Advanced" },
+  { name: "Agile", level: "Expert" },
+  { name: "Scrum", level: "Expert" },
+  { name: "Claude Code", level: "Advanced" },
+  { name: "Gemini CLI", level: "Advanced" },
+  { name: "Qwen Code", level: "Advanced" }
 ];
 
 export const media: MediaItem[] = [
