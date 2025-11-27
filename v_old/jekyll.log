@@ -1,0 +1,11 @@
+Configuration file: /home/mea/Documents/mlavanga.github.io/v_old/_config.yml
+            Source: /home/mea/Documents/mlavanga.github.io/v_old
+       Destination: /home/mea/Documents/mlavanga.github.io/v_old/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 0.151 seconds.
+ Auto-regeneration: enabled for '/home/mea/Documents/mlavanga.github.io/v_old'
+LiveReload address: http://0.0.0.0:35729
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+        LiveReload: Browser connected

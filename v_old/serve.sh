@@ -1,27 +1,32 @@
 #!/bin/bash
 set -e
 
-PID_FILE=".next.pid"
-LOG_FILE="next.log"
-PORT=3000
+PID_FILE=".jekyll.pid"
+LOG_FILE="jekyll.log"
+PORT=4000
 
 start_server() {
     if [ -f "$PID_FILE" ]; then
         if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
-            echo "⚠️  Next.js Server is already running (PID: $(cat $PID_FILE))"
+            echo "⚠️  Server is already running (PID: $(cat $PID_FILE))"
             return
         else
             rm "$PID_FILE"
         fi
     fi
 
-    echo "🚀 Starting Next.js server..."
-    nohup npm run dev -- -p $PORT > "$LOG_FILE" 2>&1 &
+    if netstat -tuln | grep -q ":$PORT "; then
+        echo "❌ Port $PORT is already in use. Please stop the existing process."
+        exit 1
+    fi
+
+    echo "🚀 Starting Jekyll server..."
+    nohup bundle exec jekyll serve --livereload --host=0.0.0.0 --port=$PORT > "$LOG_FILE" 2>&1 &
     echo $! > "$PID_FILE"
     
-    sleep 5
+    sleep 2
     if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
-        echo "✅ Next.js Server started on http://localhost:$PORT"
+        echo "✅ Server started on http://localhost:$PORT"
         echo "📄 Logs: tail -f $LOG_FILE"
     else
         echo "❌ Server failed to start. Check $LOG_FILE"
@@ -33,11 +38,11 @@ start_server() {
 stop_server() {
     if [ -f "$PID_FILE" ]; then
         PID=$(cat "$PID_FILE")
-        echo "🛑 Stopping Next.js server (PID: $PID)..."
+        echo "🛑 Stopping server (PID: $PID)..."
         kill $PID || echo "Process not found."
         rm "$PID_FILE"
     else
-        echo "ℹ️  No Next.js server running."
+        echo "ℹ️  No server running."
     fi
 }
 
