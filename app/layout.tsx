@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mario Lavanga | Senior research engineer ",
-  description: "Portfolio of Mario Lavanga - Biomedical signal processing and AI research engineer",
+  title: "Mario Lavanga | Senior Research Engineer | Biomedical Signal Processing & AI Scientist",
+  description: "Portfolio of Mario Lavanga - Senior Research Engineer at Hamilton Medical. Specialized in Biomedical Signal Processing, AI, and Computational Neuroscience.",
 };
 
 export default function RootLayout({

@@ -49,7 +49,7 @@ export interface PersonalInfo {
 export const personalInfo: PersonalInfo = {
   name: "Mario Lavanga",
   title: "Senior research engineer | Biomedical Signal Processing & AI Scientist",
-  email: ["m.lavanga@gmail.com", "mlavanga@esat.kuleuven.be"],
+  email: ["m.lavanga@gmail.com"],
   phone: "+33 6 52 93 31 80",
   website: "https://mlavanga.github.io",
   cv: "/documents/LAVANGA_CV.pdf",
@@ -60,18 +60,13 @@ export const personalInfo: PersonalInfo = {
     orcid: "0000-0002-3615-033X",
     youtube: "UCPGcAPYLko6G6p-1ZfM8CvQ",
   },
-  about: `Born in Italy and raised by a medical doctor and a stay-at-home mom, since his childhood Mario has developed an early interest in human physiology and biology. 
-  Doubtful to seek a clinical career, he went on to study Biomedical engineering at Polytechnic university of Milan, where he delved into the intertwined 
-  realities of physics and biology. During his studies, he had the opportunity to build a strong background in the field of biomedical signal processing. 
-  He also joined a top-level students program organized by the two main Italian technical universities, known as Alta Scuola Politecnica (ASP), 
-  which provided opportunities to learn a multidisciplinary approaches to solving problems. The skills he acquired have been useful in his working experience, which is characterized 
-  by frequent interactions with clinical doctors. 
+  about: `Born in Italy and raised by a medical doctor and a housewife, since his childhood Mario has developed an early interest in human physiology and biology. Doubtful to seek a clinical career, he went on to study Biomedical engineering at Polytechnic university of Milan, where he delved into the intertwined realities of physics and biology. During his studies, he had the opportunity to build a strong background in the field of biomedical signal processing. Furthermore, he joined a top-level students program organized by the two main Italian technical universities, known as Alta Scuola Politecnica (ASP), which provided opportunity to learn a multidisciplinary approach to solving problems. The skills he acquired have been useful in his career, which has been characterized by frequent interactions with clinical doctors. 
   
-  Immediately after graduating, he moved to KU Leuven, Belgium, where he started focusing on mental health and neurodevelopment as part of his PhD studies.
-  In January 2017, he received a strategic basic research grant from the Flemish scientific research fund (FWO) to quantify stress in premature babies by means of EEG and ECG signal processing.
-  
-  After its graduation, he moved to Aix-Marseille University, France, for a postdoc position. His new research focuses on the mathematical modelling 
-  of neurodevelopment and ageing based on the Virtual Brain technology.`
+  Immediately after graduating, he moved to KU Leuven, Belgium, where he started focusing on mental health and neurodevelopment as part of his PhD studies. In January 2017, he received a strategic basic research grant from the Flemish scientific research fund (FWO). The goal of his research was to quantify stress in premature babies by means of EEG and ECG signal processing and to understand its impact on the infants’ development. After its graduation, he moved to Aix-Marseille University, France, for a postdoc position. Within the framework of the Human Brain Project, he developed a new modelling pipeline to explain the drivers of healthy aging and virtually reproduce them thanks to the Virtual Brain technology by Prof. Viktor Jirsa. The pipeline has been recognised as successful showcase by the European and its available at following link (https://github.com/ins-amu/virtual_aging_brain).
+
+  After many years in academia, he decided to move to Switzerland for a new position as research engineer - data scientist at Hamilton Medical, where he focuses on the reduction of the asynchronies between patients and ICU ventilators.
+
+  His main research interests are time-series analysis, digital signal processing, nonlinear dynamics and graph theory applied to the biomedical world. Commonly nicknamed as AI evangelist by his colleagues, he pioneers AI coding tools among his pioneers, especially agentic program like Claude Code, Qwen Code and Gemini CLI.  Besides science, Mario enjoys playing theatre in multiple languages (currently in German). He does also enjoys long-distance running, learning new languages and travelling in Asia.`
 };
 
 export const experience: ExperienceItem[] = [
