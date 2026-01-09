@@ -72,7 +72,7 @@ export const personalInfo: PersonalInfo = {
 export const experience: ExperienceItem[] = [
   {
     title: "HAMILTON MEDICAL AG",
-    sub_title: "Project Manager",
+    sub_title: "Project Leader",
     caption: "December 2024 - Present",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
