@@ -15,7 +15,7 @@ export default function Footer({ info }: { info: PersonalInfo }) {
         </div>
         
         <p className="text-slate-500 text-sm">
-          © {new Date().getFullYear()} {info.name}. All rights reserved.
+          <span>© {new Date().getFullYear()} {info.name}. All rights reserved.</span>
           <br />
           Built with Next.js & Tailwind CSS.
         </p>
