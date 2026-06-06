@@ -20,7 +20,7 @@ Prefer the helper script for the dev server, which daemonizes it and manages a P
 ./serve.sh start | stop | restart | status | logs
 ```
 
-There is **no test suite**. "Verification" for this project means building and inspecting the rendered output — the `WEBSITE_PLAN.md` workstream 5 uses Chrome DevTools MCP against `localhost:3000` (dev), `npx serve out/` (the built export), and the live URL, plus `lighthouse_audit` for SEO/Perf/A11y.
+There is **no test suite**. "Verification" for this project means building and inspecting the rendered output — `docs/WEBSITE_PLAN.md` workstream 5 uses Chrome DevTools MCP against `localhost:3000` (dev), `npx serve out/` (the built export), and the live URL, plus `lighthouse_audit` for SEO/Perf/A11y.
 
 ## Architecture
 
@@ -41,4 +41,4 @@ New work goes in the Next.js app (`app/`).
 
 ## Active plan
 
-`WEBSITE_PLAN.md` (v1) is the current improvement roadmap: fix stale facts in `content.ts`, expand SEO metadata + JSON-LD in `layout.tsx`, add Apple-Health positioning, and build a client-side health-data demo (SSL biosignal demo primary). Any new interactive demo must stay static-export-safe: `'use client'`, `next/dynamic` with `ssr:false` for browser-only libs, ML models loaded from CDN, only small sample data bundled in `public/`.
+Internal planning/strategy docs live in `docs/` (gitignored — kept out of this public Pages repo): `docs/WEBSITE_PLAN.md`, `docs/RESOURCE_PLAN.md`, `docs/ACTION_PLAN.md`, `docs/HEALTH_AI_LAB.md`. They cover the SEO/positioning work and the client-side health-data demos. Any new interactive demo must stay static-export-safe: `'use client'`, `next/dynamic` with `ssr:false` for browser-only libs, ML models loaded from CDN, only small sample data bundled in `public/`.

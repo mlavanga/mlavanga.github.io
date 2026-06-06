@@ -25,7 +25,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Accessibility: respect reduced-motion preference (Apple cares about craft) */
+/* Accessibility: respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

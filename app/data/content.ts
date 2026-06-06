@@ -60,45 +60,42 @@ export const personalInfo: PersonalInfo = {
     orcid: "0000-0002-3615-033X",
     youtube: "UCPGcAPYLko6G6p-1ZfM8CvQ",
   },
-  about: `I build and validate machine-learning and signal-processing models for ICU ventilators at Hamilton Medical, and I take them through to FDA-cleared software — running both embedded on the device and in the cloud platform. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational hospital data.
+  about: `I build deep-learning and signal-processing models on physiological data, then prove they hold up on real hospital data before they reach a patient. At Hamilton Medical I work on ICU ventilation under FDA constraints. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational ICU and NICU data.
 
   Before Hamilton I spent years in academia. As a postdoc at Aix-Marseille University I worked on the drivers of healthy brain aging with The Virtual Brain, published in NeuroImage (2023); during my PhD at KU Leuven I quantified stress and pain in premature infants from EEG and heart-rate variability. Across NICU, aging and ICU work I have published eight first-author papers on multimodal biosignals.
 
   I work hands-on with modern ML tooling — Python, PyTorch/TensorFlow, and agentic coding tools like Claude Code, Codex, Cline and Gemini CLI, including custom MCP servers. Off the clock I act in amateur theatre (currently in German), run long distances, and keep collecting languages.`
 };
 
-// Apple-Health positioning (lead with the #1 differentiator: dual on-device + cloud FDA deployment)
 export const positioning = {
-  headline: "I ship machine learning into ICU ventilators — embedded on the device and in the cloud — and through FDA clearance.",
-  subline: "Health AI with statistical rigour: causal inference, time-series modelling and uncertainty quantification on real patient data.",
+  headline: "I build deep-learning and signal-processing models on physiological data, and prove they hold up on real hospital data before they reach a patient.",
+  subline: "Health AI with statistical rigour — causal inference (PCMCI, Granger, Bayesian), time-series modelling, self-supervised representation learning and uncertainty quantification, on observational ICU and NICU data under FDA constraints.",
   lookingFor: "Looking for health-ML research roles where statistical rigour actually ships.",
 };
 
-// The four differentiators, surfaced as crawlable text (qualitative — no NDA-sensitive figures, never \"foundation model\")
 export const selectedWork: ProjectItem[] = [
   {
-    title: "FDA-cleared ML, on the device and in the cloud",
-    description: "I take ventilation models from research to FDA-cleared software — running in real time on the ventilator's constrained hardware and in the cloud platform that monitors patients across hospitals. End-to-end edge + cloud health-AI lifecycle.",
-    tags: ["On-device", "Cloud", "FDA-cleared", "Device heterogeneity"],
+    title: "Machine learning for ICU ventilation",
+    description: "At Hamilton Medical I build deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics and patient effort, and ship the asynchrony detectors both on the ventilator (embedded, real-time) and in the cloud platform — under FDA constraints, through to regulatory submission.",
+    tags: ["ICU ventilation", "On-device + cloud", "FDA constraints", "Patents pending"],
   },
   {
-    title: "Causal inference in production",
-    description: "I use PCMCI, Granger and Bayesian methods to find what actually drives patient–ventilator asynchrony, so it can be explained rather than only flagged. My NeuroImage (2023) paper used causal inference to explain interhemispheric change in the aging brain.",
-    tags: ["PCMCI", "Granger", "Bayesian", "Causal Inference"],
+    title: "Causal inference",
+    description: "I apply PCMCI, Granger and Bayesian causal discovery to ICU time series to find what drives patient–ventilator asynchrony. My NeuroImage (2023) paper used causal inference to explain change in the aging brain.",
+    tags: ["PCMCI", "Granger", "Bayesian", "Time series"],
   },
   {
-    title: "Self-supervised representation learning on biosignals",
-    description: "I have built a self-supervised model that labels sleep stages and classifies stress from physiological signals — representation learning on biosignals without labels. It is not a foundation model at wearable scale; that is the direction I am pushing next.",
-    tags: ["Self-supervised", "Sleep staging", "Stress", "Representation learning"],
+    title: "Self-supervised representation learning",
+    description: "In the Human Brain Project I used self-supervised representation learning with uncertainty quantification (variational autoencoders) to model the virtual aging brain — showcased on EBRAINS.",
+    tags: ["Self-supervised", "VAEs", "Uncertainty", "Digital twin"],
   },
   {
-    title: "Validation that holds across populations",
-    description: "FDA work forces evaluation beyond aggregate accuracy. I check calibration and slice performance across ventilation modes, devices and patient cohorts from several regions — robustness under the subject variability, device differences and drift that define the ICU.",
-    tags: ["Calibration", "Subgroup analysis", "Distribution shift", "Robustness"],
+    title: "Multimodal biosignals, validated on real data",
+    description: "Across NICU, aging and ICU work I fuse ECG, HRV and EEG, and prove models hold up on messy, observational clinical data — robust features in noisy environments, eight first-author papers.",
+    tags: ["ECG / HRV / EEG", "Observational data", "Robustness", "Longitudinal"],
   },
 ];
 
-// Trust signals (web-verified Scholar metrics)
 export const trustSignals = {
   citations: 611,
   hIndex: 13,
@@ -122,7 +119,7 @@ export const experience: ExperienceItem[] = [
     caption: "June 2022 - December 2024",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Built signal-processing and deep-learning models to detect patient–ventilator asynchrony and estimate respiratory mechanics and patient effort, and shipped them through FDA-cleared release — embedded on the ventilator and in the cloud platform — with calibration and subgroup checks before sign-off. Co-inventor on patent applications."
+    description: "Built deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics, and patient effort, and shipped the asynchrony detectors both on the ventilator itself (embedded, real-time) and in the cloud platform. Applied causal discovery (PCMCI / Granger) on ICU time series to find asynchrony drivers. Working on patent applications."
   },
   {
     title: "TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES",
@@ -240,7 +237,7 @@ export const publications: ProjectItem[] = [
 ];
 
 export const skills: SkillItem[] = [
-  // Statistics & modelling (mirrors the CV; the spine of the Apple-Health story)
+  // Statistics & modelling
   { name: "Causal Inference", level: "Advanced" },
   { name: "Time-Series Modelling", level: "Advanced" },
   { name: "Uncertainty Quantification", level: "Advanced" },

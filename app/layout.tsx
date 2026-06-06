@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 const SITE_URL = "https://mlavanga.github.io";
 const TITLE = "Mario Lavanga — Health AI, Causal Inference & Biosignal Processing";
 const DESCRIPTION =
-  "Mario Lavanga is a Senior Research Engineer & Project Leader at Hamilton Medical who ships machine learning into ICU ventilators — on-device and in the cloud — through FDA-cleared software. Health AI with statistical rigour: causal inference, time-series modelling and uncertainty quantification.";
+  "Mario Lavanga is a Senior Research Engineer & Project Leader at Hamilton Medical working on ICU ventilation under FDA constraints. Health AI with statistical rigour: causal inference (PCMCI, Granger, Bayesian), time-series modelling, self-supervised representation learning and uncertainty quantification on physiological data.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -29,12 +29,10 @@ export const metadata: Metadata = {
     "causal inference",
     "biosignal processing",
     "ICU ventilation",
-    "wearable signals",
     "time-series modelling",
     "uncertainty quantification",
-    "self-supervised learning",
+    "self-supervised representation learning",
     "statistical rigour",
-    "FDA-cleared machine learning",
     "Hamilton Medical",
   ],
   authors: [{ name: "Mario Lavanga", url: SITE_URL }],
@@ -58,7 +56,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// JSON-LD Person schema — the lever that fixes stale Google snippets and builds a correct knowledge card.
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -76,10 +73,9 @@ const personSchema = {
     "Statistics",
     "Biosignal Processing",
     "ICU Ventilation",
-    "Wearable Signals",
     "Time-Series Modelling",
     "Uncertainty Quantification",
-    "Self-Supervised Learning",
+    "Self-Supervised Representation Learning",
   ],
   sameAs: [
     `https://www.linkedin.com/in/${personalInfo.socials.linkedin}`,

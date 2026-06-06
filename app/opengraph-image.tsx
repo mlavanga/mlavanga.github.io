@@ -29,8 +29,8 @@ export default function OpengraphImage() {
           Health AI · Causal Inference · Biosignal Processing
         </div>
         <div style={{ fontSize: 30, marginTop: 36, color: "#94a3b8", maxWidth: 980 }}>
-          Machine learning shipped into ICU ventilators — on-device and in the cloud — through
-          FDA-cleared software.
+          Deep learning and statistical rigour on physiological data — causal inference,
+          time-series modelling and uncertainty quantification.
         </div>
       </div>
     ),

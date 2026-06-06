@@ -39,7 +39,7 @@ export default function HealthAISection({
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{trust.note}</p>
 
         <div className="grid lg:grid-cols-5 gap-8 mt-12 items-start">
-          {/* the four differentiators (crawlable text) */}
+          {/* selected work */}
           <div className="lg:col-span-3 grid sm:grid-cols-2 gap-5">
             {selectedWork.map((item, i) => (
               <div
@@ -59,7 +59,7 @@ export default function HealthAISection({
             ))}
           </div>
 
-          {/* the headline visual: precomputed causal-graph demo */}
+          {/* precomputed causal-graph demo */}
           <div className="lg:col-span-2">
             <CausalGraphDemo />
           </div>

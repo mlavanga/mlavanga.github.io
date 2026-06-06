@@ -43,3 +43,5 @@ next.log
 jekyll.log
 *.log
 *.pid
+# Internal planning/strategy docs — keep OUT of the public Pages repo
+docs/
