@@ -69,30 +69,29 @@ export const personalInfo: PersonalInfo = {
 
 export const positioning = {
   headline: "I build deep-learning and signal-processing models on physiological data, and prove they hold up on real hospital data before they reach a patient.",
-  subline: "Health AI with statistical rigour — causal inference (PCMCI, Granger, Bayesian), time-series modelling, self-supervised representation learning and uncertainty quantification, on observational ICU and NICU data under FDA constraints.",
-  lookingFor: "Looking for health-ML research roles where statistical rigour actually ships.",
+  subline: "Health AI with statistical rigour — causal inference (Granger, Bayesian), time-series modelling, supervised learning and uncertainty quantification, on observational ICU and NICU data under FDA constraints.",
 };
 
 export const selectedWork: ProjectItem[] = [
   {
-    title: "Machine learning for ICU ventilation",
-    description: "At Hamilton Medical I build deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics and patient effort, and ship the asynchrony detectors both on the ventilator (embedded, real-time) and in the cloud platform — under FDA constraints, through to regulatory submission.",
-    tags: ["ICU ventilation", "On-device + cloud", "FDA constraints", "Patents pending"],
+    title: "Signal processing for ICU ventilation",
+    description: "I develop signal-processing algorithms for ICU ventilation and ship them on embedded devices and a cloud platform, in a regulated environment.",
+    tags: ["ICU ventilation", "Signal processing", "Embedded + cloud", "Regulated"],
   },
   {
     title: "Causal inference",
-    description: "I apply PCMCI, Granger and Bayesian causal discovery to ICU time series to find what drives patient–ventilator asynchrony. My NeuroImage (2023) paper used causal inference to explain change in the aging brain.",
-    tags: ["PCMCI", "Granger", "Bayesian", "Time series"],
+    description: "I apply Granger and Bayesian causal discovery to ICU time series to understand what drives ICU events.",
+    tags: ["Granger", "Bayesian", "Causal discovery", "Time series"],
   },
   {
-    title: "Self-supervised representation learning",
-    description: "In the Human Brain Project I used self-supervised representation learning with uncertainty quantification (variational autoencoders) to model the virtual aging brain — showcased on EBRAINS.",
-    tags: ["Self-supervised", "VAEs", "Uncertainty", "Digital twin"],
+    title: "Supervised learning on biosignals",
+    description: "Supervised models on physiological signals — for example sleep staging and stress detection.",
+    tags: ["Supervised learning", "Sleep staging", "Stress detection", "Biosignals"],
   },
   {
-    title: "Multimodal biosignals, validated on real data",
-    description: "Across NICU, aging and ICU work I fuse ECG, HRV and EEG, and prove models hold up on messy, observational clinical data — robust features in noisy environments, eight first-author papers.",
-    tags: ["ECG / HRV / EEG", "Observational data", "Robustness", "Longitudinal"],
+    title: "The virtual aging brain",
+    description: "Modelling the virtual aging brain with variational autoencoders and brain-network analysis (Human Brain Project; NeuroImage 2023).",
+    tags: ["Variational autoencoders", "Brain networks", "Human Brain Project", "NeuroImage 2023"],
   },
 ];
 

@@ -5,9 +5,9 @@ import Footer from '../components/Footer';
 import { personalInfo } from '../data/content';
 
 export const metadata: Metadata = {
-  title: 'Health-AI Lab — self-supervised ECG model (in-browser) | Mario Lavanga',
+  title: 'Health-AI Lab — PTB-XL ECG classifier in the browser | Mario Lavanga',
   description:
-    'A small self-supervised transformer encoder trained on open PTB-XL ECG, adapted with LoRA, evaluated for calibration and subgroup robustness, and run live in your browser via ONNX.',
+    'A 1-D CNN classifying 12-lead ECGs into the five PTB-XL diagnostic superclasses, reproducing the benchmark of Strodthoff et al. (2021) on open PhysioNet data — run live in your browser via ONNX Runtime Web.',
   alternates: { canonical: '/health-lab' },
 };
 
@@ -30,21 +30,18 @@ export default function HealthLabPage() {
           Health-AI Lab
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white max-w-3xl">
-          A self-supervised ECG encoder, running in your browser
+          An ECG diagnostic classifier (PTB-XL), running in your browser
         </h1>
         <p className="text-slate-600 dark:text-slate-300 mt-4 max-w-3xl leading-relaxed">
-          A small transformer encoder, pretrained with masked-autoencoding on open{' '}
+          A 1-D convolutional network that classifies 12-lead ECGs into the five{' '}
           <a href="https://physionet.org/content/ptb-xl/" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">PTB-XL</a>{' '}
-          ECG (CC-BY), adapted with <strong>LoRA</strong>, and evaluated for{' '}
-          <strong>calibration and subgroup robustness</strong>. Click a sample below and it is
-          encoded <strong>live in your browser</strong> (ONNX Runtime Web) — nothing is sent to a server.
+          diagnostic superclasses, reproducing the benchmark of{' '}
+          <a href="https://doi.org/10.1109/JBHI.2020.3022989" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">Strodthoff et al. (2021)</a>.
+          Click a recording — it is classified <strong>live in your browser</strong> (ONNX Runtime Web); nothing leaves your device.
         </p>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 max-w-3xl">
-          This is a deliberately small, reproducible artifact — a ~800-record subset of PTB-XL,
-          pretrained and LoRA-adapted on a <strong>free cloud GPU (Modal T4)</strong>. It is
-          <strong> not a foundation model</strong>. Code:{' '}
-          <span className="font-mono">github.com/mlavanga/biosignal-ssl</span>. Scaling to more
-          records is the next step; the GPU run is one command (<span className="font-mono">modal run modal_app.py</span>).
+          Open PhysioNet data — PTB-XL (Wagner et al., <em>Sci. Data</em> 2020, CC-BY 4.0).
+          Code: <span className="font-mono">github.com/mlavanga/ecg-ptbxl</span>.
         </p>
 
         <div className="mt-10">

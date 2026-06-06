@@ -34,7 +34,6 @@ export const causalLinks = demo.links as CausalLink[];
 export const causalMeta = demo.meta as CausalMeta;
 
 export const causalCaption =
-  `Real causal discovery: ${causalMeta.method} run on ${causalMeta.n_recordings} recordings ` +
-  `(${causalMeta.n_samples.toLocaleString()} samples) of the open ${causalMeta.dataset}. ` +
-  `Arrows are time-lagged causal links (lag shown in ms); thickness is link strength ` +
-  `(MCI partial correlation), colour is the sign. The same method runs in production on ICU ventilator time series.`;
+  "Causal graph discovered with PCMCI⁺ on the open BIDMC PPG/Respiration dataset. " +
+  "Arrows are time-lagged causal links (lag in ms); thickness = strength, colour = sign. " +
+  "Method: Runge et al., Science Advances 2019. Data: Pimentel et al., IEEE TBME 2017 (PhysioNet).";
