@@ -40,10 +40,11 @@ export default function HealthLabPage() {
           encoded <strong>live in your browser</strong> (ONNX Runtime Web) — nothing is sent to a server.
         </p>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 max-w-3xl">
-          This is a deliberately small, reproducible artifact trained on a 800-record subset on CPU —
+          This is a deliberately small, reproducible artifact — a ~800-record subset of PTB-XL,
+          pretrained and LoRA-adapted on a <strong>free cloud GPU (Modal T4)</strong>. It is
           <strong> not a foundation model</strong>. Code:{' '}
-          <span className="font-mono">github.com/mlavanga/biosignal-ssl</span>. A full-scale run
-          (more data, GPU) is the next step; the pipeline is one command (<span className="font-mono">modal run</span>).
+          <span className="font-mono">github.com/mlavanga/biosignal-ssl</span>. Scaling to more
+          records is the next step; the GPU run is one command (<span className="font-mono">modal run modal_app.py</span>).
         </p>
 
         <div className="mt-10">
