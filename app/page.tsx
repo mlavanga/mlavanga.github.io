@@ -1,20 +1,23 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import HealthAISection from './components/HealthAISection';
 import Section from './components/Section';
 import ExperienceCard from './components/ExperienceCard';
 import ProjectCard from './components/ProjectCard';
 import Skills from './components/Skills';
 import Media from './components/Media';
 import Footer from './components/Footer';
-import { personalInfo, experience, education, projects, publications, skills, media } from './data/content';
+import { personalInfo, positioning, selectedWork, trustSignals, experience, education, projects, publications, skills, media } from './data/content';
 
 export default function Home() {
   return (
     <main className="bg-slate-50 dark:bg-slate-900 min-h-screen selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
-      
+
       <Hero info={personalInfo} />
-      
+
+      <HealthAISection positioning={positioning} selectedWork={selectedWork} trust={trustSignals} />
+
       <Section id="experience" title="Experience" className="bg-white dark:bg-slate-900">
         <div className="max-w-3xl mx-auto">
           {experience.map((item, index) => (
@@ -60,7 +63,7 @@ export default function Home() {
       <Section id="contact" title="Get in Touch" className="bg-blue-600 text-white">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-xl mb-8 opacity-90">
-            I'm always open to discussing new research opportunities, collaborations, or just chatting about AI coding tools.
+            I&apos;m always open to discussing health-ML research, collaborations, or just chatting about AI coding tools.
           </p>
           <a href={`mailto:${personalInfo.email[0]}`} className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-blue-50 transition-transform hover:scale-105">
             Say Hello

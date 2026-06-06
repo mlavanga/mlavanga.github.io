@@ -10,6 +10,7 @@ export default function Navbar() {
         
         <div className="hidden md:flex space-x-8">
           <NavLink href="#about">About</NavLink>
+          <NavLink href="#health-ai">Health AI</NavLink>
           <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#publications">Publications</NavLink>

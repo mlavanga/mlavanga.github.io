@@ -48,25 +48,63 @@ export interface PersonalInfo {
 
 export const personalInfo: PersonalInfo = {
   name: "Mario Lavanga",
-  title: "Senior research engineer | Biomedical Signal Processing & AI Scientist",
+  title: "Senior Research Engineer & Project Leader · Health AI, Causal Inference & Biosignal Processing",
   email: ["m.lavanga@gmail.com"],
-  phone: "+33 6 52 93 31 80",
+  phone: "+41 79 908 5427",
   website: "https://mlavanga.github.io",
-  cv: "/documents/LAVANGA_CV.pdf",
+  cv: "/documents/Mario_Lavanga_CV.pdf",
   socials: {
     github: "mlavanga",
     linkedin: "mario-lavanga-87a0a7a3",
-    scholar: "oM1rUeIAAAAJ&hl",
+    scholar: "oM1rUeIAAAAJ",
     orcid: "0000-0002-3615-033X",
     youtube: "UCPGcAPYLko6G6p-1ZfM8CvQ",
   },
-  about: `Born in Italy and raised by a medical doctor and a housewife, since his childhood Mario has developed an early interest in human physiology and biology. Doubtful to seek a clinical career, he went on to study Biomedical engineering at Polytechnic university of Milan, where he delved into the intertwined realities of physics and biology. During his studies, he had the opportunity to build a strong background in the field of biomedical signal processing. Furthermore, he joined a top-level students program organized by the two main Italian technical universities, known as Alta Scuola Politecnica (ASP), which provided opportunity to learn a multidisciplinary approach to solving problems. The skills he acquired have been useful in his career, which has been characterized by frequent interactions with clinical doctors. 
-  
-  Immediately after graduating, he moved to KU Leuven, Belgium, where he started focusing on mental health and neurodevelopment as part of his PhD studies. In January 2017, he received a strategic basic research grant from the Flemish scientific research fund (FWO). The goal of his research was to quantify stress in premature babies by means of EEG and ECG signal processing and to understand its impact on the infants’ development. After its graduation, he moved to Aix-Marseille University, France, for a postdoc position. Within the framework of the Human Brain Project, he developed a new modelling pipeline to explain the drivers of healthy aging and virtually reproduce them thanks to the Virtual Brain technology by Prof. Viktor Jirsa. The pipeline has been recognised as successful showcase by the European and its available at following link (https://github.com/ins-amu/virtual_aging_brain).
+  about: `I build and validate machine-learning and signal-processing models for ICU ventilators at Hamilton Medical, and I take them through to FDA-cleared software — running both embedded on the device and in the cloud platform. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational hospital data.
 
-  After many years in academia, he decided to move to Switzerland for a new position as research engineer - data scientist at Hamilton Medical, where he focuses on the reduction of the asynchronies between patients and ICU ventilators.
+  Before Hamilton I spent years in academia. As a postdoc at Aix-Marseille University I worked on the drivers of healthy brain aging with The Virtual Brain, published in NeuroImage (2023); during my PhD at KU Leuven I quantified stress and pain in premature infants from EEG and heart-rate variability. Across NICU, aging and ICU work I have published eight first-author papers on multimodal biosignals.
 
-  His main research interests are time-series analysis, digital signal processing, nonlinear dynamics and graph theory applied to the biomedical world. Commonly nicknamed as AI evangelist by his colleagues, he pioneers AI coding tools among his pioneers, especially agentic program like Claude Code, Qwen Code and Gemini CLI.  Besides science, Mario enjoys playing theatre in multiple languages (currently in German). He does also enjoys long-distance running, learning new languages and travelling in Asia.`
+  I work hands-on with modern ML tooling — Python, PyTorch/TensorFlow, and agentic coding tools like Claude Code, Codex, Cline and Gemini CLI, including custom MCP servers. Off the clock I act in amateur theatre (currently in German), run long distances, and keep collecting languages.`
+};
+
+// Apple-Health positioning (lead with the #1 differentiator: dual on-device + cloud FDA deployment)
+export const positioning = {
+  headline: "I ship machine learning into ICU ventilators — embedded on the device and in the cloud — and through FDA clearance.",
+  subline: "Health AI with statistical rigour: causal inference, time-series modelling and uncertainty quantification on real patient data.",
+  lookingFor: "Looking for health-ML research roles where statistical rigour actually ships.",
+};
+
+// The four differentiators, surfaced as crawlable text (qualitative — no NDA-sensitive figures, never \"foundation model\")
+export const selectedWork: ProjectItem[] = [
+  {
+    title: "FDA-cleared ML, on the device and in the cloud",
+    description: "I take ventilation models from research to FDA-cleared software — running in real time on the ventilator's constrained hardware and in the cloud platform that monitors patients across hospitals. End-to-end edge + cloud health-AI lifecycle.",
+    tags: ["On-device", "Cloud", "FDA-cleared", "Device heterogeneity"],
+  },
+  {
+    title: "Causal inference in production",
+    description: "I use PCMCI, Granger and Bayesian methods to find what actually drives patient–ventilator asynchrony, so it can be explained rather than only flagged. My NeuroImage (2023) paper used causal inference to explain interhemispheric change in the aging brain.",
+    tags: ["PCMCI", "Granger", "Bayesian", "Causal Inference"],
+  },
+  {
+    title: "Self-supervised representation learning on biosignals",
+    description: "I have built a self-supervised model that labels sleep stages and classifies stress from physiological signals — representation learning on biosignals without labels. It is not a foundation model at wearable scale; that is the direction I am pushing next.",
+    tags: ["Self-supervised", "Sleep staging", "Stress", "Representation learning"],
+  },
+  {
+    title: "Validation that holds across populations",
+    description: "FDA work forces evaluation beyond aggregate accuracy. I check calibration and slice performance across ventilation modes, devices and patient cohorts from several regions — robustness under the subject variability, device differences and drift that define the ICU.",
+    tags: ["Calibration", "Subgroup analysis", "Distribution shift", "Robustness"],
+  },
+];
+
+// Trust signals (web-verified Scholar metrics)
+export const trustSignals = {
+  citations: 611,
+  hIndex: 13,
+  i10Index: 18,
+  firstAuthorPapers: 8,
+  note: "Google Scholar, June 2026",
 };
 
 export const experience: ExperienceItem[] = [
@@ -76,23 +114,23 @@ export const experience: ExperienceItem[] = [
     caption: "December 2024 - Present",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Leading the development of AI-driven and signal-processing cloud solutions for ventilation management. Orchestrating the lifecycle of advanced signal processing features from ideation, simulation to IP protection and regulatory approval."
+    description: "Leading cloud ventilation-management features from research through IP protection and regulatory submission."
   },
   {
     title: "HAMILTON MEDICAL AG",
     sub_title: "Senior Research Engineer",
-    caption: "June 2022 - Present",
+    caption: "June 2022 - December 2024",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Optimized real-time algorithms for the company’s flagship devices to monitor and alleviate patient-ventilator interactions. Pioneered Deep Learning and rule-based systems to estimate respiratory mechanics and patient effort. Working on patent applications."
+    description: "Built signal-processing and deep-learning models to detect patient–ventilator asynchrony and estimate respiratory mechanics and patient effort, and shipped them through FDA-cleared release — embedded on the ventilator and in the cloud platform — with calibration and subgroup checks before sign-off. Co-inventor on patent applications."
   },
   {
     title: "TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES",
     sub_title: "Postdoctoral Researcher",
-    caption: "October 2020 - Present",
+    caption: "October 2020 - June 2022",
     link: "https://ins-amu.fr/members",
     link_text: "INS Website",
-    description: "Postdoctoral researcher at the INS focusing on functional connectivity in the context of healthy ageing. Part of the theoretical neuroscience group working on resting state brain dynamics using Python, Jupyter-lab, Slurm, and SnakeMake."
+    description: "Studied functional connectivity in healthy ageing with the theoretical neuroscience group, using causal inference and variational autoencoders on resting-state brain dynamics (Python, JupyterLab, Slurm, SnakeMake). Work published in NeuroImage (2023)."
   },
   {
     title: "Flemish scientific research fund (FWO)",
@@ -202,23 +240,27 @@ export const publications: ProjectItem[] = [
 ];
 
 export const skills: SkillItem[] = [
+  // Statistics & modelling (mirrors the CV; the spine of the Apple-Health story)
+  { name: "Causal Inference", level: "Advanced" },
+  { name: "Time-Series Modelling", level: "Advanced" },
+  { name: "Uncertainty Quantification", level: "Advanced" },
+  { name: "Calibration & Subgroup Eval", level: "Advanced" },
+  { name: "Self-Supervised Learning", level: "Intermediate" },
+  // Languages & frameworks
   { name: "Python", level: "Advanced" },
   { name: "Matlab", level: "Expert" },
   { name: "C#", level: "Intermediate" },
   { name: "Bash", level: "Intermediate" },
-  { name: "Powershell", level: "Intermediate" },
-  { name: "React", level: "Intermediate" },
+  { name: "TensorFlow", level: "Intermediate" },
   { name: "Azure", level: "Intermediate" },
   { name: "Azure AI Foundry", level: "Intermediate" },
-  { name: "Azure DevOps", level: "Intermediate" },
-  { name: "Tensorflow", level: "Intermediate" },
-  { name: "ASP.NET", level: "Intermediate" },
   { name: "Git", level: "Advanced" },
-  { name: "Agile", level: "Intermediate" },
-  { name: "Scrum", level: "Expert" },
-  { name: "Claude Code", level: "Intermediate" },
+  // Agentic AI coding tools
+  { name: "Claude Code", level: "Advanced" },
+  { name: "Codex", level: "Intermediate" },
+  { name: "Cline", level: "Intermediate" },
   { name: "Gemini CLI", level: "Intermediate" },
-  { name: "Qwen Code", level: "Intermediate" }
+  { name: "MCP servers", level: "Intermediate" }
 ];
 
 export const media: MediaItem[] = [
