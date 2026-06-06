@@ -68,8 +68,8 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const positioning = {
-  headline: "I build deep-learning and signal-processing models on physiological data, and prove they hold up on real hospital data before they reach a patient.",
-  subline: "Health AI with statistical rigour — causal inference (Granger, Bayesian), time-series modelling, supervised learning and uncertainty quantification, on observational ICU and NICU data under FDA constraints.",
+  headline: "I build deep-learning and signal-processing models on physiological data.",
+  subline: "Health AI with statistical rigour — time-series modelling, causal inference, supervised learning and uncertainty quantification, on observational ICU and NICU data under regulated constraints.",
 };
 
 export const selectedWork: ProjectItem[] = [
@@ -118,7 +118,7 @@ export const experience: ExperienceItem[] = [
     caption: "June 2022 - December 2024",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Built deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics, and patient effort, and shipped the asynchrony detectors both on the ventilator itself (embedded, real-time) and in the cloud platform. Applied causal discovery (PCMCI / Granger) on ICU time series to find asynchrony drivers. Working on patent applications."
+    description: "Built deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics, and patient effort, and optimized signal-processing algorithms for both embedded devices and the cloud platform. Working on patent applications."
   },
   {
     title: "TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES",
@@ -236,12 +236,6 @@ export const publications: ProjectItem[] = [
 ];
 
 export const skills: SkillItem[] = [
-  // Statistics & modelling
-  { name: "Causal Inference", level: "Advanced" },
-  { name: "Time-Series Modelling", level: "Advanced" },
-  { name: "Uncertainty Quantification", level: "Advanced" },
-  { name: "Calibration & Subgroup Eval", level: "Advanced" },
-  { name: "Self-Supervised Learning", level: "Intermediate" },
   // Languages & frameworks
   { name: "Python", level: "Advanced" },
   { name: "Matlab", level: "Expert" },
@@ -256,7 +250,11 @@ export const skills: SkillItem[] = [
   { name: "Codex", level: "Intermediate" },
   { name: "Cline", level: "Intermediate" },
   { name: "Gemini CLI", level: "Intermediate" },
-  { name: "MCP servers", level: "Intermediate" }
+  { name: "MCP servers", level: "Intermediate" },
+  // Statistics & modelling
+  { name: "Time-Series Modelling", level: "Advanced" },
+  { name: "Causal Inference", level: "Advanced" },
+  { name: "Supervised Learning", level: "Advanced" }
 ];
 
 export const media: MediaItem[] = [

@@ -37,11 +37,12 @@ export default function HealthLabPage() {
           <a href="https://physionet.org/content/ptb-xl/" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">PTB-XL</a>{' '}
           diagnostic superclasses, reproducing the benchmark of{' '}
           <a href="https://doi.org/10.1109/JBHI.2020.3022989" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">Strodthoff et al. (2021)</a>.
-          Click a recording — it is classified <strong>live in your browser</strong> (ONNX Runtime Web); nothing leaves your device.
+          Click a recording — it is classified <strong>live in your browser</strong> (ONNX Runtime Web).
         </p>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 max-w-3xl">
           Open PhysioNet data — PTB-XL (Wagner et al., <em>Sci. Data</em> 2020, CC-BY 4.0).
-          Code: <span className="font-mono">github.com/mlavanga/ecg-ptbxl</span>.
+          Code:{' '}
+          <a href="https://github.com/mlavanga/ecg-ptbxl" target="_blank" rel="noreferrer" className="font-mono text-blue-600 dark:text-blue-400 underline">github.com/mlavanga/ecg-ptbxl</a>.
         </p>
 
         <div className="mt-10">
