@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ProjectItem } from '../data/content';
 import CausalGraphDemo from './CausalGraphDemo';
 
@@ -64,10 +65,16 @@ export default function HealthAISection({
           </div>
         </div>
 
-        <p className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-full">
-          <span className="w-2 h-2 rounded-full bg-blue-500" />
-          {positioning.lookingFor}
-        </p>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Link href="/health-lab" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
+            Try the in-browser Health-AI lab
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-full">
+            <span className="w-2 h-2 rounded-full bg-blue-500" />
+            {positioning.lookingFor}
+          </span>
+        </div>
       </div>
     </section>
   );
