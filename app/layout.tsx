@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 const SITE_URL = "https://mlavanga.github.io";
 const TITLE = "Mario Lavanga — Health AI, Causal Inference & Biosignal Processing";
 const DESCRIPTION =
-  "Mario Lavanga is a Senior Research Engineer & Project Leader at Hamilton Medical working on ICU ventilation under FDA constraints. Health AI with statistical rigour: causal inference (Granger, Bayesian), time-series modelling, supervised learning and uncertainty quantification on physiological data.";
+  "Mario Lavanga is a Senior Research Engineer & Project Leader at Hamilton Medical working on ICU ventilation in a regulated environment. Health AI with statistical rigour: causal inference (Granger, Bayesian), time-series modelling, supervised learning and uncertainty quantification on physiological data.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

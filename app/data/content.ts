@@ -60,7 +60,7 @@ export const personalInfo: PersonalInfo = {
     orcid: "0000-0002-3615-033X",
     youtube: "UCPGcAPYLko6G6p-1ZfM8CvQ",
   },
-  about: `I build deep-learning and signal-processing models on physiological data, then prove they hold up on real hospital data before they reach a patient. At Hamilton Medical I work on ICU ventilation under FDA constraints. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational ICU and NICU data.
+  about: `I build deep-learning and signal-processing models on physiological data, then prove they hold up on real hospital data before they reach a patient. At Hamilton Medical I work on ICU ventilation in a regulated environment. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational ICU and NICU data.
 
   Before Hamilton I spent years in academia. As a postdoc at Aix-Marseille University I worked on the drivers of healthy brain aging with The Virtual Brain, published in NeuroImage (2023); during my PhD at KU Leuven I quantified stress and pain in premature infants from EEG and heart-rate variability. Across NICU, aging and ICU work I have published eight first-author papers on multimodal biosignals.
 
@@ -75,7 +75,7 @@ export const positioning = {
 export const selectedWork: ProjectItem[] = [
   {
     title: "Signal processing for ICU ventilation",
-    description: "I develop signal-processing algorithms for ICU ventilation and ship them on embedded devices and a cloud platform, in a regulated environment.",
+    description: "I develop signal-processing algorithms for ICU ventilation and deploy them on embedded devices and a cloud platform, in a regulated environment.",
     tags: ["ICU ventilation", "Signal processing", "Embedded + cloud", "Regulated"],
   },
   {
@@ -118,7 +118,7 @@ export const experience: ExperienceItem[] = [
     caption: "June 2022 - December 2024",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Built deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics, and patient effort, and optimized signal-processing algorithms for both embedded devices and the cloud platform. Working on patent applications."
+    description: "Built deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics, and patient effort, and optimized signal-processing algorithms for both embedded devices and a cloud platform. Working on patent applications."
   },
   {
     title: "TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES",
@@ -126,11 +126,11 @@ export const experience: ExperienceItem[] = [
     caption: "October 2020 - June 2022",
     link: "https://ins-amu.fr/members",
     link_text: "INS Website",
-    description: "Studied functional connectivity in healthy ageing with the theoretical neuroscience group, using causal inference and variational autoencoders on resting-state brain dynamics (Python, JupyterLab, Slurm, SnakeMake). Work published in NeuroImage (2023)."
+    description: "Studied functional connectivity in healthy aging with the theoretical neuroscience group, using causal inference and variational autoencoders on resting-state brain dynamics (Python, JupyterLab, Slurm, SnakeMake). Work published in NeuroImage (2023)."
   },
   {
     title: "Flemish scientific research fund (FWO)",
-    sub_title: "S.B. PhD Fellow at ESAT departement, STADIUS group, KU Leuven",
+    sub_title: "S.B. PhD Fellow at ESAT department, STADIUS group, KU Leuven",
     caption: "January 2017 - September 2020",
     link: "https://www.fwo.be/en/support-programmes/all-calls/phd/phd-fellowship-strategic-basic-research/",
     link_text: "FWO website",
@@ -138,11 +138,11 @@ export const experience: ExperienceItem[] = [
   },
   {
     title: "KU LEUVEN",
-    sub_title: "PhD Fellow at ESAT departement, STADIUS group, Biomed Team",
+    sub_title: "PhD Fellow at ESAT department, STADIUS group, Biomed Team",
     caption: "January 2016 - December 2016",
     link: "https://biomed-kuleuven.web.app/",
     link_text: "Biomed Team Website",
-    description: "First year PhD research dedicated to neonatal physiology, development, machine learning, and graph theory."
+    description: "First-year PhD research dedicated to neonatal physiology, development, machine learning, and graph theory."
   }
 ];
 
@@ -151,7 +151,7 @@ export const education: ExperienceItem[] = [
     title: "KU Leuven",
     sub_title: "Doctor of Engineering Science (PhD) - Electrical Engineering",
     caption: "2016 - 2020",
-    description: "Perfectioned research and communication skills to deliver clinical sounding results based on mathematical and data science knowledge."
+    description: "Perfected research and communication skills to deliver clinically sound results based on mathematical and data science knowledge."
   },
   {
     title: "Alta Scuola Politecnica",
@@ -176,14 +176,14 @@ export const education: ExperienceItem[] = [
 export const projects: ProjectItem[] = [
   {
     title: "Patient-ventilator asynchronies",
-    description: "Optimizing patient-ventilator asynchronies detection in mechanically ventilated patients using advanced signal processing techniques.",
+    description: "Optimizing patient-ventilator asynchrony detection in mechanically ventilated patients using advanced signal-processing techniques.",
     link: "https://www.hamilton-medical.com/en_US/Products/Technologies/IntelliSync.html",
     tags: ["Respiratory Mechanics", "Signal Processing", "Python", "C#"],
-    quote: "Optimizing patient-ventilator asynchronies detection"
+    quote: "Optimizing patient-ventilator asynchrony detection"
   },
   {
     title: "The Virtual Aging Brain",
-    description: "Modelling aging and neurodevelopment with The Virtual Brain. Creating a virtual aging cohort based on the 1000 brains study dataset using Python, JupyterLab, Git, SnakeMake, and Slurm.",
+    description: "Modelling aging and neurodevelopment with The Virtual Brain. Creating a virtual aging cohort based on the 1000 Brains Study dataset using Python, JupyterLab, Git, SnakeMake, and Slurm.",
     link: "https://github.com/ins-amu/virtual_aging_brain",
     tags: ["Neuroscience", "Python", "HPC", "Modeling"],
     quote: "Modelling aging and neurodevelopment with The Virtual Brain"
@@ -193,7 +193,7 @@ export const projects: ProjectItem[] = [
     description: "PhD research focused on the detection of early-life pain and stress in premature infants by means of physiological signal processing (EEG, ECG). Developed in Matlab.",
     link: "https://mlavanga.github.io/documents/LAVANGA_Mario_Thesis_Sep2020.pdf",
     tags: ["Biomedical Engineering", "Matlab", "Signal Processing"],
-    quote: "Modeling early-life and pain in premature infants"
+    quote: "Modelling early-life stress and pain in premature infants"
   },
   {
     title: "Vote-chain project",
@@ -214,7 +214,7 @@ export const publications: ProjectItem[] = [
   },
   {
     title: "Quantitative EEG analysis in TSC",
-    description: "Results associated with autism spectrum disorder and development abnormalities in infants with tuberous sclerosis complex. Biomed. Signal Process. Control, 2021.",
+    description: "Results associated with autism spectrum disorder and developmental abnormalities in infants with tuberous sclerosis complex. Biomed. Signal Process. Control, 2021.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S174680942100255X",
     tags: ["Publication", "EEG", "Autism"],
     date: "July 2021"

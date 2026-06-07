@@ -20,6 +20,9 @@ export default function Hero({ info }: { info: PersonalInfo }) {
           <p className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-100 leading-relaxed max-w-lg">
             {positioning.headline}
           </p>
+          <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
+            Specialized in multimodal sensor fusion and real-time patient monitoring.
+          </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
             <a href={info.cv} target="_blank" rel="noreferrer" className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
