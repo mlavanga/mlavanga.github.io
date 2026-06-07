@@ -1,0 +1,22 @@
+{
+  "task": "PTB-XL superdiagnostic (multi-label, 5 classes)",
+  "paper": "Strodthoff et al., IEEE JBHI 2021",
+  "paper_macro_auroc": 0.928,
+  "macro_auroc": 0.916,
+  "per_class_auroc": {
+    "NORM": 0.939,
+    "MI": 0.905,
+    "STTC": 0.927,
+    "CD": 0.917,
+    "HYP": 0.894
+  },
+  "class_names": {
+    "NORM": "Normal ECG",
+    "MI": "Myocardial Infarction",
+    "STTC": "ST/T Change",
+    "CD": "Conduction Disturbance",
+    "HYP": "Hypertrophy"
+  },
+  "ece": 0.109,
+  "n_test": 2158
+}

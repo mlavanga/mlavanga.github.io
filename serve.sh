@@ -8,23 +8,23 @@ PORT=3000
 start_server() {
     if [ -f "$PID_FILE" ]; then
         if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
-            echo "⚠️  Next.js Server is already running (PID: $(cat $PID_FILE))"
+            echo "Next.js server is already running (PID: $(cat $PID_FILE))"
             return
         else
             rm "$PID_FILE"
         fi
     fi
 
-    echo "🚀 Starting Next.js server..."
+    echo "Starting Next.js server..."
     nohup npm run dev -- -p $PORT > "$LOG_FILE" 2>&1 &
     echo $! > "$PID_FILE"
-    
+
     sleep 5
     if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
-        echo "✅ Next.js Server started on http://localhost:$PORT"
-        echo "📄 Logs: tail -f $LOG_FILE"
+        echo "Next.js server started on http://localhost:$PORT"
+        echo "Logs: tail -f $LOG_FILE"
     else
-        echo "❌ Server failed to start. Check $LOG_FILE"
+        echo "Server failed to start. Check $LOG_FILE"
         cat "$LOG_FILE"
         exit 1
     fi
@@ -33,11 +33,11 @@ start_server() {
 stop_server() {
     if [ -f "$PID_FILE" ]; then
         PID=$(cat "$PID_FILE")
-        echo "🛑 Stopping Next.js server (PID: $PID)..."
+        echo "Stopping Next.js server (PID: $PID)..."
         kill $PID || echo "Process not found."
         rm "$PID_FILE"
     else
-        echo "ℹ️  No Next.js server running."
+        echo "No Next.js server running."
     fi
 }
 
@@ -48,9 +48,9 @@ case "$1" in
     logs)    tail -f "$LOG_FILE" ;;
     status)
         if [ -f "$PID_FILE" ] && ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
-            echo "✅ Running (PID: $(cat $PID_FILE))"
+            echo "Running (PID: $(cat $PID_FILE))"
         else
-            echo "❌ Not running"
+            echo "Not running"
         fi
         ;;
     *)

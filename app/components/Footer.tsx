@@ -14,7 +14,7 @@ export default function Footer({ info }: { info: PersonalInfo }) {
            <a href={`https://youtube.com/channel/${info.socials.youtube}`} className="hover:text-blue-400 transition-colors">YouTube</a>
         </div>
         
-        <p className="text-slate-500 text-sm">
+        <p className="text-slate-400 text-sm">
           © {new Date().getFullYear()} {info.name}. All rights reserved.
           <br />
           Built with Next.js & Tailwind CSS.
