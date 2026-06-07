@@ -1,29 +1,29 @@
-import { PersonalInfo } from '../data/content';
+import { PersonalInfo, positioning } from '../data/content';
 
 export default function Hero({ info }: { info: PersonalInfo }) {
   return (
     <section id="about" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse motion-reduce:animate-none"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000 motion-reduce:animate-none"></div>
       </div>
 
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-sm font-medium mb-4">
-            Senior Research Engineer & Project Leader
+          <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-4">
+            Senior Research Engineer &amp; Project Leader · Hamilton Medical
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Hi, I'm <span className="text-blue-600 dark:text-blue-400">{info.name}</span>
+            Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">{info.name}</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg">
-            {info.title}
+          <p className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-100 leading-relaxed max-w-lg">
+            {positioning.headline}
           </p>
           <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
-            Passionate about decoding the human body through Signal Processing and AI. Specializing in multimodal sensor fusion and real-time patient monitoring.
+            Specialized in multimodal sensor fusion and real-time patient monitoring.
           </p>
-          
+
           <div className="flex flex-wrap gap-4 pt-4">
             <a href={info.cv} target="_blank" rel="noreferrer" className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
               Download CV

@@ -48,25 +48,59 @@ export interface PersonalInfo {
 
 export const personalInfo: PersonalInfo = {
   name: "Mario Lavanga",
-  title: "Senior research engineer | Biomedical Signal Processing & AI Scientist",
+  title: "Senior Research Engineer & Project Leader · Health AI, Causal Inference & Biosignal Processing",
   email: ["m.lavanga@gmail.com"],
-  phone: "+33 6 52 93 31 80",
+  phone: "+41 79 908 5427",
   website: "https://mlavanga.github.io",
-  cv: "/documents/LAVANGA_CV.pdf",
+  cv: "/documents/Mario_Lavanga_CV.pdf",
   socials: {
     github: "mlavanga",
     linkedin: "mario-lavanga-87a0a7a3",
-    scholar: "oM1rUeIAAAAJ&hl",
+    scholar: "oM1rUeIAAAAJ",
     orcid: "0000-0002-3615-033X",
     youtube: "UCPGcAPYLko6G6p-1ZfM8CvQ",
   },
-  about: `Born in Italy and raised by a medical doctor and a housewife, since his childhood Mario has developed an early interest in human physiology and biology. Doubtful to seek a clinical career, he went on to study Biomedical engineering at Polytechnic university of Milan, where he delved into the intertwined realities of physics and biology. During his studies, he had the opportunity to build a strong background in the field of biomedical signal processing. Furthermore, he joined a top-level students program organized by the two main Italian technical universities, known as Alta Scuola Politecnica (ASP), which provided opportunity to learn a multidisciplinary approach to solving problems. The skills he acquired have been useful in his career, which has been characterized by frequent interactions with clinical doctors. 
-  
-  Immediately after graduating, he moved to KU Leuven, Belgium, where he started focusing on mental health and neurodevelopment as part of his PhD studies. In January 2017, he received a strategic basic research grant from the Flemish scientific research fund (FWO). The goal of his research was to quantify stress in premature babies by means of EEG and ECG signal processing and to understand its impact on the infants’ development. After its graduation, he moved to Aix-Marseille University, France, for a postdoc position. Within the framework of the Human Brain Project, he developed a new modelling pipeline to explain the drivers of healthy aging and virtually reproduce them thanks to the Virtual Brain technology by Prof. Viktor Jirsa. The pipeline has been recognised as successful showcase by the European and its available at following link (https://github.com/ins-amu/virtual_aging_brain).
+  about: `I build deep-learning and signal-processing models on physiological data, then prove they hold up on real hospital data before they reach a patient. At Hamilton Medical I work on ICU ventilation in a regulated environment. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational ICU and NICU data.
 
-  After many years in academia, he decided to move to Switzerland for a new position as research engineer - data scientist at Hamilton Medical, where he focuses on the reduction of the asynchronies between patients and ICU ventilators.
+  Before Hamilton I spent years in academia. As a postdoc at Aix-Marseille University I worked on the drivers of healthy brain aging with The Virtual Brain, published in NeuroImage (2023); during my PhD at KU Leuven I quantified stress and pain in premature infants from EEG and heart-rate variability. Across NICU, aging and ICU work I have published eight first-author papers on multimodal biosignals.
 
-  His main research interests are time-series analysis, digital signal processing, nonlinear dynamics and graph theory applied to the biomedical world. Commonly nicknamed as AI evangelist by his colleagues, he pioneers AI coding tools among his pioneers, especially agentic program like Claude Code, Qwen Code and Gemini CLI.  Besides science, Mario enjoys playing theatre in multiple languages (currently in German). He does also enjoys long-distance running, learning new languages and travelling in Asia.`
+  I work hands-on with modern ML tooling — Python, PyTorch/TensorFlow, and agentic coding tools like Claude Code, Codex, Cline and Gemini CLI, including custom MCP servers. Off the clock I act in amateur theatre (currently in German), run long distances, and keep collecting languages.`
+};
+
+export const positioning = {
+  headline: "I build deep-learning and signal-processing models on physiological data.",
+  subline: "Health AI with statistical rigour — time-series modelling, causal inference, supervised learning and uncertainty quantification, on observational ICU and NICU data under regulated constraints.",
+};
+
+export const selectedWork: ProjectItem[] = [
+  {
+    title: "Signal processing for ICU ventilation",
+    description: "I develop signal-processing algorithms for ICU ventilation and deploy them on embedded devices and a cloud platform, in a regulated environment.",
+    tags: ["ICU ventilation", "Signal processing", "Embedded + cloud", "Regulated"],
+  },
+  {
+    title: "Causal inference",
+    description: "I apply Granger and Bayesian causal discovery to ICU time series to understand what drives ICU events.",
+    tags: ["Granger", "Bayesian", "Causal discovery", "Time series"],
+  },
+  {
+    title: "Supervised learning on biosignals",
+    description: "Supervised models on physiological signals — for example sleep staging and stress detection.",
+    tags: ["Supervised learning", "Sleep staging", "Stress detection", "Biosignals"],
+  },
+  {
+    title: "The virtual aging brain",
+    description: "Modelling the virtual aging brain with variational autoencoders and brain-network analysis (Human Brain Project; NeuroImage 2023).",
+    tags: ["Variational autoencoders", "Brain networks", "Human Brain Project", "NeuroImage 2023"],
+  },
+];
+
+export const trustSignals = {
+  citations: 611,
+  hIndex: 13,
+  i10Index: 18,
+  firstAuthorPapers: 8,
+  note: "Google Scholar, June 2026",
 };
 
 export const experience: ExperienceItem[] = [
@@ -76,27 +110,27 @@ export const experience: ExperienceItem[] = [
     caption: "December 2024 - Present",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Leading the development of AI-driven and signal-processing cloud solutions for ventilation management. Orchestrating the lifecycle of advanced signal processing features from ideation, simulation to IP protection and regulatory approval."
+    description: "Leading cloud ventilation-management features from research through IP protection and regulatory submission."
   },
   {
     title: "HAMILTON MEDICAL AG",
     sub_title: "Senior Research Engineer",
-    caption: "June 2022 - Present",
+    caption: "June 2022 - December 2024",
     link: "https://www.hamilton-medical.com/",
     link_text: "Hamilton Medical Website",
-    description: "Optimized real-time algorithms for the company’s flagship devices to monitor and alleviate patient-ventilator interactions. Pioneered Deep Learning and rule-based systems to estimate respiratory mechanics and patient effort. Working on patent applications."
+    description: "Built deep-learning and rule-based models for patient–ventilator asynchrony, respiratory mechanics, and patient effort, and optimized signal-processing algorithms for both embedded devices and a cloud platform. Working on patent applications."
   },
   {
     title: "TNG - INSTITUT DE NEUROSCIENCES DES SYSTÈMES",
     sub_title: "Postdoctoral Researcher",
-    caption: "October 2020 - Present",
+    caption: "October 2020 - June 2022",
     link: "https://ins-amu.fr/members",
     link_text: "INS Website",
-    description: "Postdoctoral researcher at the INS focusing on functional connectivity in the context of healthy ageing. Part of the theoretical neuroscience group working on resting state brain dynamics using Python, Jupyter-lab, Slurm, and SnakeMake."
+    description: "Studied functional connectivity in healthy aging with the theoretical neuroscience group, using causal inference and variational autoencoders on resting-state brain dynamics (Python, JupyterLab, Slurm, SnakeMake). Work published in NeuroImage (2023)."
   },
   {
     title: "Flemish scientific research fund (FWO)",
-    sub_title: "S.B. PhD Fellow at ESAT departement, STADIUS group, KU Leuven",
+    sub_title: "S.B. PhD Fellow at ESAT department, STADIUS group, KU Leuven",
     caption: "January 2017 - September 2020",
     link: "https://www.fwo.be/en/support-programmes/all-calls/phd/phd-fellowship-strategic-basic-research/",
     link_text: "FWO website",
@@ -104,11 +138,11 @@ export const experience: ExperienceItem[] = [
   },
   {
     title: "KU LEUVEN",
-    sub_title: "PhD Fellow at ESAT departement, STADIUS group, Biomed Team",
+    sub_title: "PhD Fellow at ESAT department, STADIUS group, Biomed Team",
     caption: "January 2016 - December 2016",
     link: "https://biomed-kuleuven.web.app/",
     link_text: "Biomed Team Website",
-    description: "First year PhD research dedicated to neonatal physiology, development, machine learning, and graph theory."
+    description: "First-year PhD research dedicated to neonatal physiology, development, machine learning, and graph theory."
   }
 ];
 
@@ -117,7 +151,7 @@ export const education: ExperienceItem[] = [
     title: "KU Leuven",
     sub_title: "Doctor of Engineering Science (PhD) - Electrical Engineering",
     caption: "2016 - 2020",
-    description: "Perfectioned research and communication skills to deliver clinical sounding results based on mathematical and data science knowledge."
+    description: "Perfected research and communication skills to deliver clinically sound results based on mathematical and data science knowledge."
   },
   {
     title: "Alta Scuola Politecnica",
@@ -142,14 +176,14 @@ export const education: ExperienceItem[] = [
 export const projects: ProjectItem[] = [
   {
     title: "Patient-ventilator asynchronies",
-    description: "Optimizing patient-ventilator asynchronies detection in mechanically ventilated patients using advanced signal processing techniques.",
+    description: "Optimizing patient-ventilator asynchrony detection in mechanically ventilated patients using advanced signal-processing techniques.",
     link: "https://www.hamilton-medical.com/en_US/Products/Technologies/IntelliSync.html",
     tags: ["Respiratory Mechanics", "Signal Processing", "Python", "C#"],
-    quote: "Optimizing patient-ventilator asynchronies detection"
+    quote: "Optimizing patient-ventilator asynchrony detection"
   },
   {
     title: "The Virtual Aging Brain",
-    description: "Modelling aging and neurodevelopment with The Virtual Brain. Creating a virtual aging cohort based on the 1000 brains study dataset using Python, JupyterLab, Git, SnakeMake, and Slurm.",
+    description: "Modelling aging and neurodevelopment with The Virtual Brain. Creating a virtual aging cohort based on the 1000 Brains Study dataset using Python, JupyterLab, Git, SnakeMake, and Slurm.",
     link: "https://github.com/ins-amu/virtual_aging_brain",
     tags: ["Neuroscience", "Python", "HPC", "Modeling"],
     quote: "Modelling aging and neurodevelopment with The Virtual Brain"
@@ -159,7 +193,7 @@ export const projects: ProjectItem[] = [
     description: "PhD research focused on the detection of early-life pain and stress in premature infants by means of physiological signal processing (EEG, ECG). Developed in Matlab.",
     link: "https://mlavanga.github.io/documents/LAVANGA_Mario_Thesis_Sep2020.pdf",
     tags: ["Biomedical Engineering", "Matlab", "Signal Processing"],
-    quote: "Modeling early-life and pain in premature infants"
+    quote: "Modelling early-life stress and pain in premature infants"
   },
   {
     title: "Vote-chain project",
@@ -180,7 +214,7 @@ export const publications: ProjectItem[] = [
   },
   {
     title: "Quantitative EEG analysis in TSC",
-    description: "Results associated with autism spectrum disorder and development abnormalities in infants with tuberous sclerosis complex. Biomed. Signal Process. Control, 2021.",
+    description: "Results associated with autism spectrum disorder and developmental abnormalities in infants with tuberous sclerosis complex. Biomed. Signal Process. Control, 2021.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S174680942100255X",
     tags: ["Publication", "EEG", "Autism"],
     date: "July 2021"
@@ -202,23 +236,25 @@ export const publications: ProjectItem[] = [
 ];
 
 export const skills: SkillItem[] = [
+  // Languages & frameworks
   { name: "Python", level: "Advanced" },
   { name: "Matlab", level: "Expert" },
   { name: "C#", level: "Intermediate" },
   { name: "Bash", level: "Intermediate" },
-  { name: "Powershell", level: "Intermediate" },
-  { name: "React", level: "Intermediate" },
+  { name: "TensorFlow", level: "Intermediate" },
   { name: "Azure", level: "Intermediate" },
   { name: "Azure AI Foundry", level: "Intermediate" },
-  { name: "Azure DevOps", level: "Intermediate" },
-  { name: "Tensorflow", level: "Intermediate" },
-  { name: "ASP.NET", level: "Intermediate" },
   { name: "Git", level: "Advanced" },
-  { name: "Agile", level: "Intermediate" },
-  { name: "Scrum", level: "Expert" },
-  { name: "Claude Code", level: "Intermediate" },
+  // Agentic AI coding tools
+  { name: "Claude Code", level: "Advanced" },
+  { name: "Codex", level: "Intermediate" },
+  { name: "Cline", level: "Intermediate" },
   { name: "Gemini CLI", level: "Intermediate" },
-  { name: "Qwen Code", level: "Intermediate" }
+  { name: "MCP servers", level: "Intermediate" },
+  // Statistics & modelling
+  { name: "Time-Series Modelling", level: "Advanced" },
+  { name: "Causal Inference", level: "Advanced" },
+  { name: "Supervised Learning", level: "Advanced" }
 ];
 
 export const media: MediaItem[] = [

@@ -6,7 +6,7 @@ export default function ProjectCard({ item }: { item: ProjectItem }) {
       <div className="p-6 flex-grow">
         <div className="flex justify-between items-start mb-4">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-500 transition-colors">{item.title}</h3>
-            {item.date && <span className="text-xs text-slate-400 border border-slate-200 dark:border-slate-700 px-2 py-1 rounded">{item.date}</span>}
+            {item.date && <span className="text-xs text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 px-2 py-1 rounded">{item.date}</span>}
         </div>
         
         <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-4">

@@ -1,0 +1,73 @@
+{
+  "nodes": [
+    {
+      "id": "RESP",
+      "label": "Respiration",
+      "unit": "a.u.",
+      "autoLag": 0.96
+    },
+    {
+      "id": "PLETH",
+      "label": "PPG",
+      "unit": "a.u.",
+      "autoLag": 0.51
+    },
+    {
+      "id": "II",
+      "label": "ECG",
+      "unit": "a.u.",
+      "autoLag": -0.06
+    }
+  ],
+  "links": [
+    {
+      "from": "RESP",
+      "to": "PLETH",
+      "lag": 9,
+      "strength": 0.105,
+      "sign": -1,
+      "directed": true
+    },
+    {
+      "from": "PLETH",
+      "to": "RESP",
+      "lag": 5,
+      "strength": 0.091,
+      "sign": -1,
+      "directed": true
+    },
+    {
+      "from": "PLETH",
+      "to": "II",
+      "lag": 1,
+      "strength": 0.172,
+      "sign": -1,
+      "directed": true
+    },
+    {
+      "from": "II",
+      "to": "RESP",
+      "lag": 14,
+      "strength": 0.071,
+      "sign": 1,
+      "directed": true
+    },
+    {
+      "from": "II",
+      "to": "PLETH",
+      "lag": 7,
+      "strength": 0.133,
+      "sign": -1,
+      "directed": true
+    }
+  ],
+  "meta": {
+    "dataset": "BIDMC PPG and Respiration Dataset (PhysioNet, ODC-BY 1.0) — 125 Hz waveforms",
+    "n_recordings": 6,
+    "n_samples": 24000,
+    "fs_hz": 10.42,
+    "method": "PCMCI+ (Tigramite) with ParCorr",
+    "tau_max": 25,
+    "pc_alpha": 0.01
+  }
+}
