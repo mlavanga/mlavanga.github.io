@@ -52,7 +52,7 @@ export const personalInfo: PersonalInfo = {
   email: ["m.lavanga@gmail.com"],
   phone: "+41 79 908 5427",
   website: "https://mlavanga.github.io",
-  cv: "/documents/Mario_Lavanga_CV.pdf",
+  cv: "/documents/LAVANGA_CV.pdf",
   socials: {
     github: "mlavanga",
     linkedin: "mario-lavanga-87a0a7a3",
@@ -62,7 +62,7 @@ export const personalInfo: PersonalInfo = {
   },
   about: `I build deep-learning and signal-processing models on physiological data, then prove they hold up on real hospital data before they reach a patient. At Hamilton Medical I work on ICU ventilation in a regulated environment. I trained as a biomedical signal-processing engineer (MSc Politecnico di Milano, PhD KU Leuven), but most of my day-to-day work is the statistics: causal inference, time-series modelling, and uncertainty quantification on messy, observational ICU and NICU data.
 
-  Before Hamilton I spent years in academia. As a postdoc at Aix-Marseille University I worked on the drivers of healthy brain aging with The Virtual Brain, published in NeuroImage (2023); during my PhD at KU Leuven I quantified stress and pain in premature infants from EEG and heart-rate variability. Across NICU, aging and ICU work I have published eight first-author papers on multimodal biosignals.
+  Before Hamilton I spent years in academia. As a postdoc at Aix-Marseille University I worked on the drivers of healthy brain aging with The Virtual Brain, published in NeuroImage (2023); during my PhD at KU Leuven I quantified stress and pain in premature infants from EEG and heart-rate variability. Across NICU, aging and ICU work I have published nine first-author papers on multimodal biosignals.
 
   I work hands-on with modern ML tooling — Python, PyTorch/TensorFlow, and agentic coding tools like Claude Code, Codex, Cline and Gemini CLI, including custom MCP servers. Off the clock I act in amateur theatre (currently in German), run long distances, and keep collecting languages.`
 };
@@ -96,10 +96,10 @@ export const selectedWork: ProjectItem[] = [
 ];
 
 export const trustSignals = {
-  citations: 611,
+  citations: 612,
   hIndex: 13,
   i10Index: 18,
-  firstAuthorPapers: 8,
+  firstAuthorPapers: 9,
   note: "Google Scholar, June 2026",
 };
 
