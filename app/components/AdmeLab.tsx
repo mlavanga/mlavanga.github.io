@@ -15,7 +15,7 @@ type Ep = {
   half_width?: number; coverage?: number; threshold?: number;
   mae?: number; spearman?: number; r2?: number; auroc?: number; auprc?: number;
 };
-const EPS = panel.endpoints as Ep[];
+const EPS = panel.endpoints as unknown as Ep[];
 const CATS = ['Absorption', 'Distribution', 'Metabolism', 'Toxicity'];
 type Status = 'loading' | 'ready' | 'error';
 
