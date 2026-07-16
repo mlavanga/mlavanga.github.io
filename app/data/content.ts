@@ -93,6 +93,11 @@ export const selectedWork: ProjectItem[] = [
     description: "Modelling the virtual aging brain with variational autoencoders and brain-network analysis (Human Brain Project; NeuroImage 2023).",
     tags: ["Variational autoencoders", "Brain networks", "Human Brain Project", "NeuroImage 2023"],
   },
+  {
+    title: "Multi-endpoint ADMET panel",
+    description: "A 13-endpoint ADMET panel (TDC benchmark) predicted from SMILES with calibrated uncertainty and applicability-domain flags, running entirely in the browser (RDKit-JS + ONNX).",
+    tags: ["ADMET", "RDKit", "Conformal UQ", "Applicability domain", "ONNX"],
+  },
 ];
 
 export const trustSignals = {
