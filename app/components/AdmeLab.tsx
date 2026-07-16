@@ -19,6 +19,15 @@ const EPS = panel.endpoints as unknown as Ep[];
 const CATS = ['Absorption', 'Distribution', 'Metabolism', 'Toxicity'];
 type Status = 'loading' | 'ready' | 'error';
 
+// optional reference model: ADMET-AI (Chemprop D-MPNN) served on Modal
+const REF_URL = 'https://m-lavanga--adme-lab-dmpnn-web.modal.run';
+const REF_MAP: Record<string, string> = {
+  solubility_aqsoldb: 'Solubility_AqSolDB', lipophilicity_astrazeneca: 'Lipophilicity_AstraZeneca',
+  caco2_wang: 'Caco2_Wang', hia_hou: 'HIA_Hou', bbb_martins: 'BBB_Martins', ppbr_az: 'PPBR_AZ',
+  cyp3a4_veith: 'CYP3A4_Veith', cyp2d6_veith: 'CYP2D6_Veith', clearance_hepatocyte_az: 'Clearance_Hepatocyte_AZ',
+  herg: 'hERG', ames: 'AMES', dili: 'DILI', ld50_zhu: 'LD50_Zhu',
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare global { interface Window { RDKit?: any; initRDKitModule?: any; } }
 
@@ -85,6 +94,11 @@ export default function AdmeLab() {
   const [err, setErr] = useState<string | null>(null);
   const [results, setResults] = useState<Res[] | null>(null);
   const [adSim, setAdSim] = useState<number | null>(null);
+  const [scored, setScored] = useState('');
+  const [refVals, setRefVals] = useState<Record<string, number> | null>(null);
+  const [refBusy, setRefBusy] = useState(false);
+  const [refMs, setRefMs] = useState<number | null>(null);
+  const [refErr, setRefErr] = useState<string | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ortRef = useRef<any>(null);
   const rdkitRef = useRef<unknown>(null);
@@ -115,7 +129,7 @@ export default function AdmeLab() {
 
   async function predict(sm: string) {
     if (status !== 'ready') return;
-    setBusy(true); setErr(null);
+    setBusy(true); setErr(null); setRefVals(null); setRefErr(null); setScored(sm.trim());
     try {
       const feat = featurize(rdkitRef.current, sm.trim());
       if (!feat) { setErr('Could not parse that SMILES.'); setResults(null); setBusy(false); return; }
@@ -135,6 +149,28 @@ export default function AdmeLab() {
       setResults(out);
     } catch (e) { console.error(e); setErr('Inference failed.'); }
     setBusy(false);
+  }
+
+  async function fetchRef() {
+    if (!scored) return;
+    setRefBusy(true); setRefErr(null);
+    const t0 = performance.now();
+    try {
+      const r = await fetch(`${REF_URL}/predict`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ smiles: scored }),
+      });
+      const j = await r.json();
+      const row = Object.values(j.predictions)[0] as Record<string, number>;
+      const out: Record<string, number> = {};
+      for (const ep of EPS) { const k = REF_MAP[ep.name]; if (k && k in row) out[ep.name] = row[k]; }
+      setRefVals(out); setRefMs(Math.round(performance.now() - t0));
+    } catch (e) { console.error(e); setRefErr('Reference API unavailable — a cold start can take ~30 s; try again.'); }
+    setRefBusy(false);
+  }
+
+  function fmtRef(ep: Ep, v: number) {
+    return ep.task === 'clf' ? `${(v * 100).toFixed(0)}%` : v.toFixed(2);
   }
 
   const adBadge = adSim === null ? null
@@ -202,6 +238,27 @@ export default function AdmeLab() {
             </p>
           </div>
 
+          {/* optional reference model served on Modal */}
+          <div className="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div>
+                <h2 className="font-bold text-slate-900 dark:text-white">Compare with a reference D-MPNN</h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-xl">
+                  Fetch predictions from <strong>ADMET-AI</strong> (a Chemprop graph neural network, the TDC
+                  leaderboard reference) served as a CPU API on <strong>Modal</strong>. Adds a{' '}
+                  <span className="text-violet-600 dark:text-violet-300 font-mono">ref</span> value to each row.
+                  {refMs !== null && <span className="text-teal-700 dark:text-teal-400"> Last call {refMs} ms.</span>}
+                </p>
+              </div>
+              <button onClick={fetchRef} disabled={refBusy}
+                className="px-4 py-2 rounded-lg border border-violet-500 text-violet-700 dark:text-violet-300 font-medium hover:bg-violet-50 dark:hover:bg-violet-900/20 disabled:opacity-50 whitespace-nowrap">
+                {refBusy ? 'Querying…' : 'Query reference model'}
+              </button>
+            </div>
+            {refErr && <p className="text-xs text-amber-600 dark:text-amber-400 mt-2">{refErr}</p>}
+            {refBusy && <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">First call may cold-start the container (~30 s).</p>}
+          </div>
+
           {/* endpoint panel grouped by ADMET */}
           {CATS.map(cat => {
             const rows = results.filter(r => r.ep.cat === cat);
@@ -223,6 +280,12 @@ export default function AdmeLab() {
                         <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${dot}`} title={r.fav === null ? 'not scored' : r.fav ? 'favourable' : 'liability / unfavourable'} />
                         <span className="flex-1 text-slate-700 dark:text-slate-200">{ep.label}</span>
                         <span className="font-mono text-slate-900 dark:text-white">{pred}</span>
+                        {refVals && (
+                          <span className="w-24 text-right font-mono text-[11px] text-violet-600 dark:text-violet-300"
+                                title="ADMET-AI (Chemprop D-MPNN), served on Modal">
+                            {ep.name in refVals ? `ref ${fmtRef(ep, refVals[ep.name])}` : ''}
+                          </span>
+                        )}
                         <span className="w-28 text-right text-[11px] text-slate-400 dark:text-slate-500">{perf}</span>
                       </div>
                     );
