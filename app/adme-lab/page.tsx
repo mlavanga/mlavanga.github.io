@@ -33,20 +33,15 @@ export default function AdmeLabPage() {
           A multi-endpoint ADMET panel, running in your browser
         </h1>
         <p className="text-slate-600 dark:text-slate-300 mt-4 max-w-3xl leading-relaxed">
-          Type any molecule (SMILES) and get a 13-endpoint ADMET panel — absorption, distribution,
-          metabolism and toxicity — each with <strong>calibrated uncertainty</strong> and an{' '}
-          <strong>applicability-domain flag</strong>. Featurisation (<a href="https://www.rdkit.org/" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">RDKit</a> ECFP) and
-          inference both run <strong>live in your browser</strong> — no server. Models are benchmarked on the{' '}
-          <a href="https://tdcommons.ai/benchmark/admet_group/overview/" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">Therapeutics Data Commons ADMET group</a>{' '}
-          (scaffold splits); each row shows its held-out test metric.
+          Type any molecule (SMILES) → 13 ADME &amp; toxicity properties, each with{' '}
+          <strong>uncertainty</strong> and an <strong>applicability-domain flag</strong>. Everything runs{' '}
+          <strong>live in your browser</strong> (<a href="https://www.rdkit.org/" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">RDKit</a> + ONNX, no server),
+          benchmarked on the{' '}
+          <a href="https://tdcommons.ai/benchmark/admet_group/overview/" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">TDC ADMET</a> group.
         </p>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 max-w-3xl">
-          Honest scope: ECFP + small-MLP baselines on open data — not a production ADMET model, and I
-          have not worked in pharmacokinetics. It shows the methods (multi-task modelling, calibration,
-          applicability domain, reproducible benchmarking) transferring to molecular data. A Chemprop
-          D-MPNN would score higher on the hard endpoints. Reference bar:{' '}
-          <a href="https://academic.oup.com/bioinformatics/article/40/7/btae416/7698030" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 underline">ADMET-AI</a>. Code:{' '}
-          <a href="https://github.com/mlavanga/adme-lab" target="_blank" rel="noreferrer" className="font-mono text-blue-600 dark:text-blue-400 underline">github.com/mlavanga/adme-lab</a>.
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 max-w-3xl">
+          A methods demo on open data — not a production model.{' '}
+          <a href="https://github.com/mlavanga/adme-lab" target="_blank" rel="noreferrer" className="font-mono text-blue-600 dark:text-blue-400 underline">github.com/mlavanga/adme-lab</a>
         </p>
 
         <div className="mt-10">

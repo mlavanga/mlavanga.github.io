@@ -203,7 +203,8 @@ export default function AdmeLab() {
             {busy ? 'Scoring…' : 'Predict'}
           </button>
         </div>
-        <div className="flex flex-wrap gap-2 mt-3">
+        <div className="flex flex-wrap items-center gap-2 mt-3">
+          <span className="text-xs text-slate-400 dark:text-slate-500">Any molecule works — or try:</span>
           {examples.samples.map(s => (
             <button key={s.name} onClick={() => { setSmiles(s.smiles); predict(s.smiles); }}
               className="text-xs px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-blue-400">
@@ -233,8 +234,7 @@ export default function AdmeLab() {
               {favs.length > 0 && <>Favourable: {favs.join(', ')}.</>}
             </p>
             <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-2">
-              Illustrative rule-of-thumb flags; not a validated developability score. Out-of-domain
-              predictions are unreliable regardless of value.
+              Rule-of-thumb flags. Out-of-domain molecules: predictions are unreliable.
             </p>
           </div>
 
@@ -242,11 +242,10 @@ export default function AdmeLab() {
           <div className="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div>
-                <h2 className="font-bold text-slate-900 dark:text-white">Compare with a reference D-MPNN</h2>
+                <h2 className="font-bold text-slate-900 dark:text-white">Compare with a reference model</h2>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-xl">
-                  Fetch predictions from <strong>ADMET-AI</strong> (a Chemprop graph neural network, the TDC
-                  leaderboard reference) served as a CPU API on <strong>Modal</strong>. Adds a{' '}
-                  <span className="text-violet-600 dark:text-violet-300 font-mono">ref</span> value to each row.
+                  Adds a <span className="text-violet-600 dark:text-violet-300 font-mono">ref</span> value per row from{' '}
+                  <strong>ADMET-AI</strong>, a stronger graph neural network served on Modal.
                   {refMs !== null && <span className="text-teal-700 dark:text-teal-400"> Last call {refMs} ms.</span>}
                 </p>
               </div>
@@ -298,9 +297,8 @@ export default function AdmeLab() {
           {/* honest limitations */}
           <div className="bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 text-xs text-slate-500 dark:text-slate-400 space-y-1">
             <p className="font-semibold text-slate-600 dark:text-slate-300">Reliability &amp; limitations</p>
-            <p>Regression endpoints carry a split-conformal interval (~90% nominal coverage on the test set); per-endpoint test metrics are shown on each row and come from the TDC scaffold-split benchmark.</p>
-            <p>ECFP + small-MLP baselines — deliberately not state-of-the-art. Hard/small endpoints (e.g. hepatocyte clearance, HIA) score weakly and are shown honestly, not hidden. A Chemprop D-MPNN would do better on those.</p>
-            <p>Open data only (TDC ADMET Benchmark Group). Not a production ADMET model; no chirality/tautomer/formulation effects; the applicability-domain flag is similarity-based, not a guarantee.</p>
+            <p>± is a ~90% conformal interval; each row's test metric is from the TDC scaffold-split benchmark. Lightweight baselines, not state-of-the-art — hard endpoints score low and are shown honestly.</p>
+            <p>Open data only; not a production model. The applicability-domain flag is similarity-based, not a guarantee.</p>
           </div>
         </>
       )}
