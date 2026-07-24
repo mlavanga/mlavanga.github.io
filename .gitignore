@@ -45,3 +45,6 @@ jekyll.log
 *.pid
 # Internal planning/strategy docs — keep OUT of the public Pages repo
 docs/
+
+# Internal bug report — keep local, never commit
+HEALTH_LAB_404_REPORT.md
