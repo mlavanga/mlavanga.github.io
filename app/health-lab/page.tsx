@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Health-AI Lab — PTB-XL ECG classifier in the browser | Mario Lavanga',
   description:
     'A 1-D CNN classifying 12-lead ECGs into the five PTB-XL diagnostic superclasses, reproducing the benchmark of Strodthoff et al. (2021) on open PhysioNet data — run live in your browser via ONNX Runtime Web.',
-  alternates: { canonical: '/health-lab' },
+  alternates: { canonical: '/health-lab/' },
 };
 
 export default function HealthLabPage() {
