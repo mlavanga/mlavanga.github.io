@@ -297,7 +297,7 @@ export default function AdmeLab() {
           {/* honest limitations */}
           <div className="bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 text-xs text-slate-500 dark:text-slate-400 space-y-1">
             <p className="font-semibold text-slate-600 dark:text-slate-300">Reliability &amp; limitations</p>
-            <p>± is a ~90% conformal interval; each row's test metric is from the TDC scaffold-split benchmark. Lightweight baselines, not state-of-the-art — hard endpoints score low and are shown honestly.</p>
+            <p>± is a ~90% conformal interval; each row&rsquo;s test metric is from the TDC scaffold-split benchmark. Lightweight baselines, not state-of-the-art — hard endpoints score low and are shown honestly.</p>
             <p>Open data only; not a production model. The applicability-domain flag is similarity-based, not a guarantee.</p>
           </div>
         </>
