@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Mario Lavanga's personal academic/professional website, served at `https://mlavanga.github.io`. It is a **Next.js 16 (App Router) static-export** site (TypeScript + Tailwind 4) deployed to GitHub Pages. There is no backend — `output: 'export'` in `next.config.ts` means everything must be statically renderable. There are no API routes, and `images.unoptimized` is set because Pages can't run the Next image optimizer.
+Mario Lavanga's personal academic/professional website, served at `https://mlavanga.github.io`. It is a **Next.js 16 (App Router) static-export** site (TypeScript + Tailwind 4) deployed to GitHub Pages. There is no backend — `output: 'export'` in `next.config.js` means everything must be statically renderable. There are no API routes, and `images.unoptimized` is set because Pages can't run the Next image optimizer.
+
+> **Config must stay `next.config.js` (not `.ts`).** The deploy workflow's `actions/configure-pages` step (`static_site_generator: next`) rewrites the config to inject `basePath`, but it only reads `next.config.js`/`.mjs`. With a `.ts` config it falls back to a blank generated config and **silently drops any custom setting** (e.g. `trailingSlash`) in CI while it still works locally — which is exactly what caused the `/health-lab/` 404. Keep the config as `.js` in the `const nextConfig = {…}; module.exports = nextConfig` shape so the action augments it. See the header comment in `next.config.js`.
 
 ## Commands
 
