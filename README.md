@@ -3,7 +3,8 @@
 Personal academic/professional website of **Mario Lavanga** — Senior Research Engineer &
 Project Leader working on Health AI, causal inference and biosignal processing.
 
-Live at **https://mlavanga.github.io**.
+- Live site: https://mlavanga.github.io
+- LinkedIn: https://www.linkedin.com/in/mario-lavanga-87a0a7a3
 
 ## Stack
 
@@ -51,24 +52,3 @@ Pushing to `main` (or `master`) triggers
 [`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml): it runs `next build` and
 publishes `./out` to GitHub Pages. The workflow uses `actions/configure-pages` with
 `static_site_generator: next` to auto-inject `basePath`.
-
-> ### ⚠️ The Next config must stay `next.config.js` (not `.ts`)
->
-> `actions/configure-pages` rewrites the config at build time to inject `basePath` / `output` /
-> `images.unoptimized`, but it **only reads `next.config.js` / `.mjs`, not `next.config.ts`.**
-> With a `.ts` config it falls back to a blank generated config and **silently drops any custom
-> setting** (e.g. `trailingSlash`) in CI — while everything still works locally, which masks the
-> bug. Keep the config as `next.config.js` in the `const nextConfig = {…}; module.exports =
-> nextConfig` shape so the action augments it instead of replacing it. See the header comment in
-> [`next.config.js`](next.config.js).
->
-> `trailingSlash: true` is required so routes export in directory form
-> (`health-lab/index.html`), which makes both `/health-lab` and `/health-lab/` resolve on Pages.
-> Without it, the trailing-slash URLs 404.
-
-## Legacy
-
-- `v_old/` — the frozen legacy Jekyll site (v1), kept for reference only.
-- `old_content/` — backup of raw markdown/config from the Jekyll site.
-
-New work goes in the Next.js app under `app/`.
