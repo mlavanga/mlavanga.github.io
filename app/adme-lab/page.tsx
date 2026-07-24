@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'ADME Lab — multi-endpoint ADMET panel in the browser | Mario Lavanga',
   description:
     'A 13-endpoint ADMET panel (absorption, distribution, metabolism, toxicity) benchmarked on the Therapeutics Data Commons ADMET group: RDKit ECFP → per-endpoint models → ONNX, with conformal uncertainty and applicability-domain flags, run live in your browser via RDKit-JS + ONNX Runtime Web.',
-  alternates: { canonical: '/adme-lab' },
+  alternates: { canonical: '/adme-lab/' },
 };
 
 export default function AdmeLabPage() {
