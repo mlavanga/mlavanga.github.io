@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V&amp;V Traceability Cockpit — AquaSim SF-01 / AC-64S (Demo)</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Boot overlay for the static (Pyodide/WebAssembly) build only. */
+    .boot-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg, #f7f8fa);
+    }
+    .boot-overlay.hidden { display: none; }
+    .boot-box {
+      max-width: 34rem; margin: 1rem; padding: 1.6rem 1.8rem;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+      border-top: 4px solid #c8102e; text-align: center;
+    }
+    .boot-box h2 { margin: .8rem 0 .4rem; font-size: 1.05rem; }
+    .boot-box p { margin: .4rem 0; font-size: .9rem; color: #6b7280; }
+    .boot-box .boot-error { color: #c8102e; font-weight: 600; }
+    .boot-spinner {
+      width: 34px; height: 34px; margin: 0 auto;
+      border: 4px solid #e5e7eb; border-top-color: #c8102e; border-radius: 50%;
+      animation: boot-spin 0.9s linear infinite;
+    }
+    .boot-overlay.failed .boot-spinner { display: none; }
+    @keyframes boot-spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="boot-overlay" class="boot-overlay" role="status">
+    <div class="boot-box">
+      <div class="boot-spinner" aria-hidden="true"></div>
+      <h2>Prüfumgebung wird geladen (Python/WebAssembly) …</h2>
+      <p id="boot-status">Pyodide wird vom CDN geladen …</p>
+      <p>Der V&amp;V-Kern (Geräte-/Systemsimulation, HiL-Prozeduren, SQLite-Traceability)
+         läuft als echtes Python direkt im Browser — kein Server. Der erste Ladevorgang
+         kann je nach Verbindung einige Sekunden dauern.</p>
+    </div>
+  </div>
+  <noscript>
+    <div class="boot-overlay"><div class="boot-box">
+      <h2>JavaScript erforderlich</h2>
+      <p>Dieses Cockpit führt den Python-V&amp;V-Kern per WebAssembly (Pyodide) im
+         Browser aus und benötigt dafür JavaScript. Bitte JavaScript aktivieren —
+         oder die Demo lokal starten: <code>./run.sh</code> im Repository
+         <code>vnv-cockpit</code> (http://localhost:8000).</p>
+    </div></div>
+  </noscript>
+
+  <header>
+    <div>
+      <h1>V&amp;V Traceability Cockpit</h1>
+      <p class="sub">Geräte-Ebene: <strong>AquaSim SF-01</strong> Sensor-Armatur (BLE + App) &middot;
+        System-Ebene: <strong>AquaSim AC-64S</strong> Controller (Ethernet/IP, GLT, manipulationssicheres Protokoll)
+        &middot; simulierte HiL-Prüfstände &middot; fiktive Modellnummern &middot; Demo</p>
+    </div>
+    <div class="toolbar">
+      <label class="fault-label">Fehlerinjektion:
+        <select id="fault-select" title="Injiziert einen Gerätefehler für den nächsten Suite-Lauf">
+          <option value="none">kein Fehler</option>
+        </select>
+      </label>
+      <button id="run-btn">HiL-Testsuite ausführen</button>
+      <a id="report-link" href="#" download="verifikationsbericht.md">Verifikationsbericht (MD)</a>
+    </div>
+  </header>
+
+  <section id="kpis" class="kpi-grid" aria-label="Kennzahlen"></section>
+
+  <section class="levels">
+    <h2>Verifikation nach Ebene</h2>
+    <div id="levels" class="level-grid"></div>
+  </section>
+
+  <section>
+    <div class="matrix-head">
+      <h2>Traceability-Matrix — Anforderung → Testfall → Status</h2>
+      <div class="filters">
+        <label>Ebene:
+          <select id="level-filter">
+            <option value="all">alle</option>
+            <option value="component">Komponente</option>
+            <option value="product">Produkt</option>
+            <option value="system">System</option>
+          </select>
+        </label>
+        <span class="hint">Anforderungs-ID anklicken → Change-Impact · Testfall anklicken → Messnachweis</span>
+      </div>
+    </div>
+    <table id="matrix">
+      <thead>
+        <tr>
+          <th>ID</th><th>Ebene</th><th>Anforderung</th><th>Norm</th>
+          <th>Owner</th><th>Testfälle</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="detail" class="detail hidden">
+    <div class="matrix-head">
+      <h2 id="detail-title">Detail</h2>
+      <button id="detail-close" class="ghost">schliessen</button>
+    </div>
+    <div id="detail-body"></div>
+  </section>
+
+  <section class="edge">
+    <h2>Edge-Monitoring &amp; Parameter-Optimierung (Feldgeräte)</h2>
+    <p class="edge-note">Ein Edge-Gateway sammelt Betriebsdaten der installierten Geräte
+      (Entnahmen, Stagnation, Spülungen). Daraus entstehen Parameter-Vorschläge —
+      und jeder Vorschlag trägt seine <strong>Re-Verifikations-Menge</strong>:
+      Felddaten führen zurück in den Prüfplan, nicht daran vorbei.</p>
+    <div id="edge-fleet" class="level-grid"></div>
+    <h3 class="edge-sub">Empfohlene Parameteränderungen (vor Rollout neu zu verifizieren)</h3>
+    <table id="edge-recs">
+      <thead>
+        <tr><th>Gerät</th><th>Parameter</th><th>von → nach</th><th>Wirkung</th><th>Hygiene</th><th>Re-Verifikation</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>Demo für die Bewerbung als Teamleiter Verification &amp; Validation (Viega, Chur).
+       Zwei Ebenen: simulierte Sensor-Armatur (Ventil, Sensorik, Firmware, BLE/App) und
+       simulierter System-Controller (Ethernet/IP-Knoten, koordinierte Hygienespülung,
+       Hash-Ketten-Protokoll, Störmeldungen, GLT) + HiL-Testprozeduren mit unabhängiger
+       Rig-Referenzmessung, Nachweisen und Freigabeempfehlung. Stdlib-Python, keine externen
+       Abhängigkeiten &middot; reproduzierbar &middot; containerisiert &middot; CI auf jedem Push.
+       Diese Instanz führt denselben Python-V&amp;V-Kern per WebAssembly (Pyodide) im Browser aus.
+       Fiktive Daten und Modellnummern.</p>
+  </footer>
+
+  <script src="./bootstrap.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
