@@ -30,13 +30,24 @@ MODEL = "AquaSim SF-01"     # fictional model number (deliberately not a real SK
 
 COLD_TEMP_C = 12.0
 HOT_TEMP_C = 65.0
-# Setpoint scheme (Viega-typical, illustrative): factory setting 38 °C,
-# user-adjustable 38–45 °C via app, safety limit (scald guard) ~43 °C,
+# During thermal disinfection the PLANT raises the hot-water supply (boiler/
+# DTE boost) — a mixing outlet can never exceed its hot supply, so ≥ 70 °C at
+# the outlet is only physical with a boosted supply. Energy balance holds:
+# mix temperature is bounded by [COLD_TEMP_C, hot_supply_c()].
+DISINFECTION_HOT_SUPPLY_C = 75.0
+# Setpoint scheme (industry-typical, illustrative): factory setting 38 °C,
+# user-adjustable 38–45 °C via app, safety limit (scald guard) 43 °C,
 # thermal disinfection ≥ 70 °C hold (commanded 72 °C to hold above 70).
 FACTORY_SETPOINT_C = 38.0
 USER_SETPOINT_MIN_C = 38.0
 USER_SETPOINT_MAX_C = 45.0
 SCALD_LIMIT_C = 43.0
+# Tolerance stack: the firmware clamp regulates on the DEVICE's own sensor,
+# whose in-spec error is ±SENSOR_TOL_C (R-C1). The safety limit must hold for
+# a WORST-CASE in-spec sensor, so the sensor tolerance is budgeted into the
+# firmware clamp: clamp + tolerance <= limit (42.5 + 0.5 <= 43.0).
+SENSOR_TOL_C = 0.5
+FW_SCALD_CLAMP_C = SCALD_LIMIT_C - SENSOR_TOL_C  # 42.5
 ALARM_LIMIT_C = 45.0
 DISINFECTION_TEMP_C = 72.0
 MAX_FLOW_LPM = 8.0
@@ -119,16 +130,28 @@ class FaucetDevice:
         self.fault = name
 
     # ----------------------------------------------------------- firmware
-    def _firmware_setpoint(self) -> float:
-        """Scald guard: outside disinfection mode the mix setpoint is clamped.
+    def hot_supply_c(self) -> float:
+        """Hot-water supply temperature seen by the mixing valve.
 
-        The clamp uses the DEVICE's own temperature reading — so a drifted
-        sensor defeats it. That is deliberate: it is exactly the failure mode
-        the independent rig reference in the scald test must catch.
+        Normally HOT_TEMP_C; during thermal disinfection the plant boosts the
+        supply (DISINFECTION_HOT_SUPPLY_C) — without that boost a ≥ 70 °C
+        outlet would violate the energy balance of a 65 °C supply."""
+        return DISINFECTION_HOT_SUPPLY_C if self.disinfection_mode else HOT_TEMP_C
+
+    def _firmware_setpoint(self) -> float:
+        """Scald guard: outside disinfection mode the mix setpoint is clamped
+        at FW_SCALD_CLAMP_C (42.5 °C), NOT at the 43.0 °C safety limit — the
+        in-spec sensor tolerance (±0.5 K, R-C1) is budgeted into the clamp so
+        the limit holds even for a worst-case in-spec sensor.
+
+        The clamp still uses the DEVICE's own temperature reading — so an
+        OUT-of-spec sensor (e.g. the −3.5 K drift fault) defeats it. That is
+        deliberate: it is exactly the failure mode the independent rig
+        reference in the scald test must catch.
         """
         if self.disinfection_mode:
             return self.setpoint_c
-        return min(self.setpoint_c, SCALD_LIMIT_C)
+        return min(self.setpoint_c, FW_SCALD_CLAMP_C)
 
     def reported_temp_c(self) -> float:
         """Device sensor model: offset + a small gain term.
@@ -196,7 +219,10 @@ class FaucetDevice:
             # control error as the firmware sees it (reported), applied to truth
             error_seen = fw_set - self.reported_temp_c()
             self.true_temp_c += error_seen * dt / TEMP_TAU_S
-            self.true_temp_c = max(COLD_TEMP_C, min(HOT_TEMP_C + 10, self.true_temp_c))
+            # energy balance: a mixing outlet is physically bounded by its
+            # supplies — never below cold, never above the (possibly boosted)
+            # hot supply.
+            self.true_temp_c = max(COLD_TEMP_C, min(self.hot_supply_c(), self.true_temp_c))
             self.stagnation_h = 0.0
         else:
             # cool towards ambient, count stagnation
