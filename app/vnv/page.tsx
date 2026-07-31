@@ -3,15 +3,15 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import { personalInfo } from '../data/content';
 
-/* TODO: set repo URL before sharing — the demo repo has no git remote yet. */
-const REPO_URL = 'https://github.com/mlavanga/REPLACE_ME';
+const REPO_URL = 'https://github.com/mlavanga/vnv-cockpit';
 const ACTIONS_URL = `${REPO_URL}/actions`;
 const BADGE_URL = `${REPO_URL}/actions/workflows/ci.yml/badge.svg`;
-/* TODO: set live deployment URL (Hugging Face Space / Render) once deployed. */
-const LIVE_URL = 'https://REPLACE_ME.hf.space';
+/* No separate hosted instance: this page is the public showcase; the cockpit
+   itself runs locally or via Docker (see "Run it yourself"). */
+const LIVE_URL: string = '';
 
 const repoReady = !REPO_URL.includes('REPLACE_ME');
-const liveReady = !LIVE_URL.includes('REPLACE_ME');
+const liveReady = LIVE_URL !== '' && !LIVE_URL.includes('REPLACE_ME');
 
 export const metadata: Metadata = {
   title: 'V&V Traceability Cockpit — verification-engineering demo | Mario Lavanga',
