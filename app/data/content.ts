@@ -180,6 +180,13 @@ export const education: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
+    title: "physiosim — coupled physiological-signal emulator",
+    description: "An in-browser, real-time numerical body-signal phantom: coupled ECG, arterial BP, PPG, SpO₂ and respiration with RSA + baroreflex coupling — a reproducible ground-truth reference for validating wearable/textile sensors. Runs fully client-side (vanilla JS + Canvas); firmware twin targets an MCP4725 DAC (github.com/mlavanga/physiosim).",
+    link: "https://mlavanga.github.io/physiosim/",
+    tags: ["ECG", "ABP", "PPG", "SpO₂", "Respiration", "Canvas", "Firmware"],
+    quote: "A reproducible numerical body-signal phantom for wearable-sensor validation"
+  },
+  {
     title: "Patient-ventilator asynchronies",
     description: "Optimizing patient-ventilator asynchrony detection in mechanically ventilated patients using advanced signal-processing techniques.",
     link: "https://www.hamilton-medical.com/en_US/Products/Technologies/IntelliSync.html",
