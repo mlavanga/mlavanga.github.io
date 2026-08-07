@@ -3,9 +3,8 @@
 An edge gateway sits next to the installed devices in the field, collects
 operating telemetry (draw-off events, stagnation intervals, hygiene flushes,
 water use) and feeds a fleet view plus *parameter recommendations* back to the
-engineering side. This mirrors, in Viega's domain, the same capability the
-candidate built at Hamilton (edge devices on ventilators collecting real
-ventilation data to improve ventilation parameters).
+engineering side — the same pattern as edge telemetry on any installed base of
+regulated devices, where field data is used to improve operating parameters.
 
 The V&V tie-in is the point of the module: an optimisation proposal is a
 *parameter change*, and a parameter change is only releasable after the

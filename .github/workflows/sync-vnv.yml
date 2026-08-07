@@ -1,0 +1,119 @@
+# Re-sync the V&V Traceability Cockpit bundle from its source repository and
+# republish it at https://mlavanga.github.io/vnv/.
+#
+# Why this exists: /vnv/ is not hand-written content — it is a *build artefact*
+# of github.com/mlavanga/vnv-cockpit (the dashboard plus the real Python V&V
+# core, executed in the browser via Pyodide/WebAssembly). Committing it by hand
+# would let the published page drift away from the verified source. This
+# workflow rebuilds it from the source repo's main branch, commits it only if
+# it actually changed, and then triggers the Pages deployment.
+#
+# Triggers
+#   * repository_dispatch (vnv-updated) — sent by the source repo's CI after its
+#     test stages pass: that is the end-to-end CD chain.
+#   * workflow_dispatch — deploy on demand from the Actions tab or with
+#       gh workflow run sync-vnv.yml -R mlavanga/mlavanga.github.io
+#   * schedule — a weekly safety net, so the published page can never sit stale
+#     for long even if a dispatch is missed.
+#
+# Note on the final step: pushes made with the built-in GITHUB_TOKEN do not
+# trigger other workflows (GitHub's loop protection), so the Pages workflow is
+# started explicitly via workflow_dispatch afterwards.
+name: Sync V&V cockpit bundle
+
+on:
+  repository_dispatch:
+    types: [ vnv-updated ]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * 1"   # Mondays 04:17 UTC
+
+permissions:
+  contents: write   # commit the refreshed bundle
+  actions: write    # dispatch the Pages deployment workflow
+
+concurrency:
+  group: sync-vnv
+  cancel-in-progress: false
+
+env:
+  SOURCE_REPO: https://github.com/mlavanga/vnv-cockpit.git
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch the cockpit source (public repo, shallow)
+        run: git clone --depth 1 "$SOURCE_REPO" "$RUNNER_TEMP/vnv-src"
+
+      - name: Record the source revision
+        id: src
+        run: |
+          cd "$RUNNER_TEMP/vnv-src"
+          echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "subject=$(git log -1 --pretty=%s)" >> "$GITHUB_OUTPUT"
+
+      - name: Verify the source before publishing it
+        # Never publish an artefact that does not pass its own gates: the same
+        # scripts the source repo's CI runs (container stage skipped — it is
+        # irrelevant to the static bundle and slower here).
+        run: |
+          cd "$RUNNER_TEMP/vnv-src"
+          ./test_unit.sh
+          ./test_system.sh --no-container
+
+      - name: Build the static bundle
+        run: |
+          cd "$RUNNER_TEMP/vnv-src"
+          ./build.sh web
+
+      - name: Stage bundle into public/vnv/
+        run: |
+          rm -rf public/vnv
+          mkdir -p public/vnv
+          cp -R "$RUNNER_TEMP/vnv-src/web/dist/." public/vnv/
+          find public/vnv -type f | sort
+
+      - name: Commit if the published bundle changed
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- public/vnv; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "public/vnv/ already matches vnv-cockpit@${{ steps.src.outputs.sha }} — nothing to deploy"
+          else
+            git add public/vnv
+            git commit -m "vnv: sync cockpit bundle from vnv-cockpit@${{ steps.src.outputs.sha }}
+
+          Source commit: ${{ steps.src.outputs.subject }}
+          Rebuilt and verified by .github/workflows/sync-vnv.yml."
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy Pages (explicit dispatch — GITHUB_TOKEN pushes do not chain)
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run nextjs.yml --ref "${GITHUB_REF_NAME}" -R "${GITHUB_REPOSITORY}"
+          echo "Pages deployment dispatched — https://mlavanga.github.io/vnv/"
+
+      - name: Summary
+        run: |
+          {
+            echo "### V&V cockpit sync"
+            echo ""
+            echo "| field | value |"
+            echo "|---|---|"
+            echo "| source | vnv-cockpit@\`${{ steps.src.outputs.sha }}\` |"
+            echo "| bundle changed | \`${{ steps.commit.outputs.changed }}\` |"
+            echo "| published at | https://mlavanga.github.io/vnv/ |"
+          } >> "$GITHUB_STEP_SUMMARY"

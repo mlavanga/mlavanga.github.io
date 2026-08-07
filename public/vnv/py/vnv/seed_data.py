@@ -1,6 +1,6 @@
 """Seed data for the V&V traceability demo.
 
-Models the verification of a connected mechatronic Viega-style product line
+Models the verification of a connected mechatronic drinking-water product line
 (fictional model numbers, deliberately no real SKUs):
 
 - **AquaSim SF-01** sensor faucet — a water-carrying device with a valve and
@@ -22,7 +22,7 @@ lab results.
 when a requirement changes, everything downstream of it must be re-verified.
 
 The data is intentionally realistic but fictional; it is here to demonstrate the
-traceability structure, not to describe a real Viega product.
+traceability structure, not to describe any real product.
 """
 
 # id, level, title, norm, owner

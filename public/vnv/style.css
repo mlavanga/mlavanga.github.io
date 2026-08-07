@@ -1,5 +1,5 @@
 :root {
-  --viega-red: #c8102e;      /* Viega brand red */
+  --accent-red: #c8102e;     /* accent for failed verdicts */
   --ink: #1c1f23;
   --muted: #6b7280;
   --line: #e5e7eb;
@@ -21,13 +21,13 @@ header {
   display: flex; justify-content: space-between; align-items: center;
   gap: 1rem; flex-wrap: wrap;
   padding: 1.1rem 1.6rem;
-  background: #fff; border-bottom: 3px solid var(--viega-red);
+  background: #fff; border-bottom: 3px solid var(--accent-red);
 }
 h1 { font-size: 1.35rem; margin: 0; }
 .sub { margin: .2rem 0 0; color: var(--muted); font-size: .9rem; }
 h2 { font-size: 1.05rem; margin: 1.4rem 1.6rem .6rem; }
 button {
-  background: var(--viega-red); color: #fff; border: 0; border-radius: 6px;
+  background: var(--accent-red); color: #fff; border: 0; border-radius: 6px;
   padding: .7rem 1.1rem; font-size: .92rem; font-weight: 600; cursor: pointer;
 }
 button:hover { background: #a50d26; }
@@ -84,8 +84,8 @@ footer { padding: 1.2rem 1.6rem 2rem; color: var(--muted); font-size: .8rem; }
 .toolbar { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
 .fault-label { font-size: .85rem; color: var(--muted); }
 #report-link {
-  font-size: .85rem; font-weight: 600; color: var(--viega-red);
-  text-decoration: none; border: 1px solid var(--viega-red);
+  font-size: .85rem; font-weight: 600; color: var(--accent-red);
+  text-decoration: none; border: 1px solid var(--accent-red);
   border-radius: 6px; padding: .55rem .8rem;
 }
 #report-link:hover { background: #fdf0f2; }
@@ -93,7 +93,7 @@ footer { padding: 1.2rem 1.6rem 2rem; color: var(--muted); font-size: .8rem; }
 
 .detail {
   margin: 1rem 1.6rem; background: #fff; border: 1px solid var(--line);
-  border-left: 4px solid var(--viega-red); border-radius: 8px; padding: .4rem 1rem 1rem;
+  border-left: 4px solid var(--accent-red); border-radius: 8px; padding: .4rem 1rem 1rem;
 }
 .detail.hidden { display: none; }
 .detail h2 { margin: .8rem 0 .4rem; }
