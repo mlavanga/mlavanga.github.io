@@ -135,7 +135,7 @@ function sparkline(trace, signal, color) {
 
 function whyBlock(why) {
   // A verdict without its justification is an opinion. Every case can say why
-  // its method was chosen (see METHOD_RATIONALE / VNV_MATRIX.md).
+  // its method was chosen (see METHOD_RATIONALE / ARCHITECTURE.md).
   return why
     ? `<p class="why"><strong>Methodenwahl:</strong> ${why}</p>`
     : "";

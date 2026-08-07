@@ -102,7 +102,7 @@ TEST_CASES = [
 # a case is automated only if the rig can actually STIMULATE the function and
 # MEASURE it against a reference. Everything else is a lab/review activity —
 # and where neither is available here, the requirement stays unverified rather
-# than being quietly declared fine. See VNV_MATRIX.md for the full reasoning.
+# than being quietly declared fine. See ARCHITECTURE.md (method selection).
 METHOD_RATIONALE = {
     # --- automated: function is modelled, rig can drive and measure it -------
     "T-C1a": "Automatisiert: mehrpunktige Kalibrierung gegen die PT100-Referenz des Prüfstands — elektrisch anregbar, deterministisch, guard-banded.",
