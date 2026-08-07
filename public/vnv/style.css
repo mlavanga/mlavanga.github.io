@@ -122,3 +122,10 @@ tr.direct td { background: #fdf0f2; }
 .edge-profile { color: var(--muted); font-size: .78rem; margin-bottom: .35rem; }
 .edge-kpis { font-size: .8rem; color: var(--ink); margin-top: .35rem; line-height: 1.5; }
 #edge-recs td { font-size: .84rem; }
+
+/* Method-selection rationale in the detail panel: a verdict is shown together
+   with the reason its verification method was chosen. */
+.why {
+  background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 6px;
+  padding: .55rem .8rem; margin: 0 0 .8rem; font-size: .88rem; line-height: 1.45;
+}

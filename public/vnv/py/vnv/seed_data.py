@@ -98,6 +98,37 @@ TEST_CASES = [
     # T-S3a is blocked on the backflow rig — the dashboard must surface this.
 ]
 
+# WHY each case has the method it has. Method selection follows one rule:
+# a case is automated only if the rig can actually STIMULATE the function and
+# MEASURE it against a reference. Everything else is a lab/review activity —
+# and where neither is available here, the requirement stays unverified rather
+# than being quietly declared fine. See VNV_MATRIX.md for the full reasoning.
+METHOD_RATIONALE = {
+    # --- automated: function is modelled, rig can drive and measure it -------
+    "T-C1a": "Automatisiert: mehrpunktige Kalibrierung gegen die PT100-Referenz des Prüfstands — elektrisch anregbar, deterministisch, guard-banded.",
+    "T-C2a": "Automatisiert: Schaltzeit ist eine Zeitmessung am Aktor über den Druckbereich — vom Prüfstand ansteuerbar und messbar.",
+    "T-C3a": "Automatisiert (Unit): Ruhestrom im Firmware-Sleep als modellierter Kennwert; ersetzt keine Messung am Musterbau.",
+    "T-C5a": "Automatisiert: Durchfluss und Druck liegen als Geräte- UND Referenzkanal vor, deshalb ist die Plausibilitätsprüfung möglich.",
+    "T-P1a": "Automatisiert: Sollwert-Rampe der Durchflussregelung, vollständig im Ventil-/Strömungsmodell abgedeckt.",
+    "T-P2a": "Automatisiert: sicherheitskritischster Fall — bewertet die Rig-Referenztemperatur, nicht die Eigenmessung des Geräts.",
+    "T-P3a": "Automatisiert im Demo, WEIL der Leckpfad modelliert ist (Blendenmodell am geschlossenen Ventil). In der Realität ist die Dichtheitsprüfung ein physischer Typtest am Prüfstand — hier automatisiert aus Modellgründen, nicht aus prüftechnischer Notwendigkeit.",
+    "T-P4a": "Automatisiert (Integration): Kopplungszeit und Parametrierung gegen einen BLE-Mock; ersetzt keinen Test mit realem Endgerät/Stack.",
+    "T-S1a": "Automatisiert (System): Stagnation im Zeitraffer über die logische Uhr des Modells.",
+    "T-S2a": "Automatisiert (System): Haltezeit ≥ 70 °C, möglich durch das Thermomodell samt angehobener Warmwasserversorgung.",
+    "T-S4a": "Automatisiert (Integration): Telegramm-Intervall und Nutzlast sind reine Protokolleigenschaften.",
+    "T-S5a": "Automatisiert (System): koordinierte Spülung über drei simulierte Knoten am System-Prüfstand.",
+    "T-S6a": "Automatisiert (System): Hash-Ketten-Integrität ist reine Software — vollständig und exakt verifizierbar.",
+    "T-S7a": "Automatisiert (System): Heartbeat-Ausfall ist über die simulierte Ethernet/IP-Strecke injizierbar.",
+    "T-S8a": "Automatisiert (System): Konfigurations-Audit über die verteilte Datenhaltung des Controllers.",
+    # --- manual: physics or judgement outside what a rig can stimulate -------
+    "T-C1b": "Manuell (Labor): 8-h-Drift im Klimaschrank — Umweltkonditionierung ist nicht modelliert und die Dauer verlangt eine Klimakammer.",
+    "T-C3b": "Manuell (Labor): EMV-Störfestigkeit (Burst/Surge) braucht Koppelnetzwerke und eine EMV-Umgebung; die Physik ist bewusst nicht modelliert.",
+    "T-C4a": "Manuell (Labor): Sendeleistung und Frequenzband sind HF-Messungen nach RED — Messplatz erforderlich, nicht simulierbar.",
+    "T-P4b": "Manuell (Review): Bewertung des Verschlüsselungs-Handshakes ist eine Entwurfsprüfung, keine Messung.",
+    # --- blocked: the honest gap --------------------------------------------
+    "T-S3a": "BLOCKIERT (Labor): Rückflussverhinderung ist eine rein hydraulisch-mechanische Schutzfunktion — keine Firmware, kein Aktor, kein Sensor, also nichts, was ein HiL-Prüfstand ansteuern oder messen könnte. Der Nachweis verlangt einen Prüfstand mit Rückdruck/Unterdruck nach EN-1717-Familie. Weder der simulierte Prüfstand (keine Rückströmung) noch das Gerätemodell (kein Rückflussverhinderer) können das anregen ⇒ hier ist KEIN Nachweis erzeugbar. Die Anforderung bleibt offen und verhindert die Freigabe.",
+}
+
 # Manual test cases carry the last recorded outcome from the lab (a real system
 # would read these from the lab management system / test reports).
 MANUAL_RESULTS = {
@@ -105,5 +136,5 @@ MANUAL_RESULTS = {
     "T-C3b": "passed",
     "T-C4a": "passed",
     "T-P4b": "passed",
-    "T-S3a": "blocked",  # waiting on the backflow test rig — a real, visible gap
+    "T-S3a": "blocked",  # no backflow bench — a real, visible gap (see METHOD_RATIONALE)
 }

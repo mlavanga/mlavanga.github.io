@@ -112,10 +112,25 @@
 
   <section class="edge">
     <h2>Edge-Monitoring &amp; Parameter-Optimierung (Feldgeräte)</h2>
-    <p class="edge-note">Ein Edge-Gateway sammelt Betriebsdaten der installierten Geräte
-      (Entnahmen, Stagnation, Spülungen). Daraus entstehen Parameter-Vorschläge —
-      und jeder Vorschlag trägt seine <strong>Re-Verifikations-Menge</strong>:
-      Felddaten führen zurück in den Prüfplan, nicht daran vorbei.</p>
+    <p class="edge-note"><strong>Wozu dieser Abschnitt:</strong> Er schliesst den Kreis
+      zwischen Feld und Prüfplan. Ein simuliertes Edge-Gateway beobachtet drei fiktive
+      Feldgeräte 14 Tage lang (Entnahmezeitpunkte, Stagnationslücken, Spülungen). Aus
+      diesen Daten entsteht ein <em>Parameter-Vorschlag</em> — und genau hier liegt der
+      V&amp;V-Punkt: <strong>eine Parameteränderung ist eine Änderung und darf erst nach
+      erneuter Verifikation freigegeben werden.</strong> Jeder Vorschlag trägt deshalb
+      seine <strong>Re-Verifikations-Menge</strong>, hergeleitet aus dem
+      Abhängigkeitsgraphen der Anforderungen (nachgelagerte Anforderungen plus die
+      direkten Voraussetzungen).</p>
+    <p class="edge-note">So entsteht jeder Vorschlag: dieselbe Entnahme-Historie wird mit
+      beiden Spülstrategien nachgerechnet — <em>fest täglich 03:00</em> gegen
+      <em>stagnationsbasiert (24 h ohne Entnahme)</em>. Vorgeschlagen wird nur, was
+      Spülwasser einspart <em>und</em> die maximale Stagnation bei ≤ 24 h hält
+      (Hygiene-Zusage). Zusätzlich: wird eine Entnahmelücke &gt; 72 h beobachtet, wird
+      eine automatische wöchentliche thermische Desinfektion vorgeschlagen. Kein
+      Optimierer, kein ML — eine nachvollziehbare Regel auf fiktiven, deterministischen
+      Daten. Die Hygiene-Äquivalenz wird hier allein über die maximale Stagnation
+      bewertet; ein echtes Vorgehen prüft zusätzlich Temperaturen, Zirkulation und
+      Volumenaustausch (Details: <code>VNV_MATRIX.md</code>).</p>
     <div id="edge-fleet" class="level-grid"></div>
     <h3 class="edge-sub">Empfohlene Parameteränderungen (vor Rollout neu zu verifizieren)</h3>
     <table id="edge-recs">

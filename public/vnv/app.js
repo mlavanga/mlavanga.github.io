@@ -68,7 +68,7 @@ function renderMatrix(rows) {
       const cases = r.cases
         .map(
           (c) =>
-            `<span class="case"><a href="#" class="case-link" data-case="${c.id}" data-kind="${c.kind}"><code>${c.id}</code></a> ${c.title}
+            `<span class="case"><a href="#" class="case-link" data-case="${c.id}" data-kind="${c.kind}" data-why="${encodeURIComponent(c.rationale || "")}"><code>${c.id}</code></a> ${c.title}
              <span class="kind">[${c.kind} · ${c.suite}]</span>
              <span class="pill ${c.status}">${c.status}</span></span>`
         )
@@ -88,7 +88,7 @@ function renderMatrix(rows) {
   tbody.querySelectorAll(".case-link").forEach((a) =>
     a.addEventListener("click", (e) => {
       e.preventDefault();
-      showEvidence(a.dataset.case, a.dataset.kind);
+      showEvidence(a.dataset.case, a.dataset.kind, decodeURIComponent(a.dataset.why || ""));
     })
   );
   tbody.querySelectorAll(".req-link").forEach((a) =>
@@ -133,11 +133,22 @@ function sparkline(trace, signal, color) {
     <span class="trace-range">${yMin.toFixed(1)} … ${yMax.toFixed(1)}</span></div>`;
 }
 
-async function showEvidence(caseId, kind) {
+function whyBlock(why) {
+  // A verdict without its justification is an opinion. Every case can say why
+  // its method was chosen (see METHOD_RATIONALE / VNV_MATRIX.md).
+  return why
+    ? `<p class="why"><strong>Methodenwahl:</strong> ${why}</p>`
+    : "";
+}
+
+async function showEvidence(caseId, kind, why) {
   if (kind === "manual") {
     openDetail(
       `Messnachweis ${caseId}`,
-      `<p>Manueller Labor-Testfall — Ergebnis stammt aus dem Laborbericht (im Demo-Seed hinterlegt). In der Praxis: Anbindung an das Labor-/Prüfmittelsystem.</p>`
+      whyBlock(why) +
+        `<p>Manueller Testfall — das Ergebnis stammt im Demo aus einem fiktiven
+         Laborbericht (Seed). In der Praxis: Verweis auf Prüfbericht, Prüfmittel
+         und Prüfer aus dem Labor-/PLM-System.</p>`
     );
     return;
   }
@@ -166,7 +177,7 @@ async function showEvidence(caseId, kind) {
   }
   openDetail(
     `Messnachweis ${caseId} — ${ev.status} (${ev.run_at})`,
-    `${faultNote}
+    `${whyBlock(why)}${faultNote}
      <table class="checks"><thead><tr><th>Prüfung</th><th>Messwert ± U</th><th>Limit</th><th>Ergebnis</th></tr></thead>
      <tbody>${checks}</tbody></table>
      ${traces ? `<h3>Signalverlauf (Rig-Referenz vs. Gerätesensor)</h3>${traces}` : ""}`

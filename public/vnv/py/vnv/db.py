@@ -72,9 +72,15 @@ def _seed(conn: sqlite3.Connection) -> None:
     for tc_id, _req, _title, kind, _suite in seed_data.TEST_CASES:
         if kind == "manual":
             status = seed_data.MANUAL_RESULTS.get(tc_id, "not_run")
+            # Store WHY this case is manual/blocked, so the dashboard can show a
+            # reason instead of an unexplained status. A "blocked" item nobody can
+            # explain is indistinguishable from a forgotten one.
+            detail = seed_data.METHOD_RATIONALE.get(
+                tc_id, "Laborbericht (fiktiver Demo-Platzhalter)"
+            )
             conn.execute(
                 "INSERT INTO test_runs (test_case_id, status, detail, run_at) VALUES (?,?,?,?)",
-                (tc_id, status, "Laborbericht (fiktiver Demo-Platzhalter)", now),
+                (tc_id, status, detail, now),
             )
     conn.commit()
 

@@ -11,7 +11,7 @@ audit-oriented Markdown verification report with a gated release recommendation.
 import json
 from datetime import datetime, timezone
 
-from . import db, hil, seed_data
+from . import db, seed_data, hil, seed_data
 
 
 def run_automated_suite(conn, fault: str = "none") -> dict:
@@ -68,6 +68,9 @@ def traceability(conn) -> list:
                     "kind": c["kind"],
                     "suite": c["suite"],
                     "status": db.latest_status(conn, c["id"]),
+                    # Why this case is automated / manual / blocked — shown in the
+                    # UI so a status is never presented without its justification.
+                    "rationale": seed_data.METHOD_RATIONALE.get(c["id"], ""),
                 }
             )
         statuses = [c["status"] for c in case_list]
